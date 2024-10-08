@@ -8,4 +8,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Logic\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\Korobeynikova\source\repos\DataGrid_Kova\DataGrid_Kova\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\Korobeynikova\source\repos\DataGrid_Kova\DataGrid_Kova\.editorconfig" />
+  </ItemGroup>
+
 </Project>
