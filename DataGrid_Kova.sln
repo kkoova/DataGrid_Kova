@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGrid_Kova", "DataGrid_Kova\DataGrid_Kova.csproj", "{27D1D584-C14F-42D2-B242-475B5C838893}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27D1D584-C14F-42D2-B242-475B5C838893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27D1D584-C14F-42D2-B242-475B5C838893}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27D1D584-C14F-42D2-B242-475B5C838893}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27D1D584-C14F-42D2-B242-475B5C838893}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E4D653F-BDCA-4028-857E-28868C3288D4}
+	EndGlobalSection
+EndGlobal
