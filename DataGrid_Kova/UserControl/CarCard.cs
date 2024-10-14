@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGrid_Kova.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,71 +20,30 @@ namespace DataGrid_Kova
             SetButtonStyles();
         }
 
-        public string Carbrand
+        public void SetCar(Car car)
         {
-            get { return CarbrandText.Text; }
-            set { CarbrandText.Text = value; }
-        }
-
-        public string Number
-        {
-            get { return NomerText.Text; }
-            set { NomerText.Text = value; }
-        }
-
-        public string Mileage
-        {
-            get { return MileageText.Text; }
-            set { MileageText.Text = value; }
-        }
-
-        public string AverageFuelConsumption
-        {
-            get { return AverageFuelConsumptionText.Text; }
-            set { AverageFuelConsumptionText.Text = value; }
-        }
-
-        public string FuelVolume
-        {
-            get { return FuelVolumeText.Text; }
-            set { FuelVolumeText.Text = value; }
-        }
-
-        public string CostRent
-        {
-            get { return CostRentText.Text; }
-            set { CostRentText.Text = value; }
-        }
-
-        public string FuelReserve
-        {
-            get { return FuelReserveText.Text; }
-            set { FuelReserveText.Text = value; }
-        }
-
-        public string RentalAmount
-        {
-            get { return RentalAmountText.Text; }
-            set { RentalAmountText.Text = value; }
-        }
-
-        public Image CarImage
-        {
-            get { return CarPictBox.Image; }
-            set { CarPictBox.Image = value; }
+            CarbrandText.Text = car.Carbrand;
+            NomerText.Text = car.Number;
+            MileageText.Text = car.Mileage;
+            AverageFuelConsumptionText.Text = car.AverageFuelConsumption;
+            FuelVolumeText.Text = car.FuelVolume;
+            CostRentText.Text = car.CostRent;
+            FuelReserveText.Text = car.FuelReserve;
+            RentalAmountText.Text = car.RentalAmount;
+            CarPictBox.Image = car.CarImage;
         }
 
         private void SetRandomBackColor()
         {
-            string[] colors = { "#dfe5f6", "#dbeaff", "#ffdbea" };
+            string[] colors = ["#dfe5f6", "#dbeaff", "#ffdbea"];
 
-            Random random = new Random();
+            Random random = new();
 
             int randomIndex = random.Next(colors.Length);
 
             Color randomColor = ColorTranslator.FromHtml(colors[randomIndex]);
 
-            this.BackColor = randomColor;
+            BackColor = randomColor;
         }
 
         private void SetButtonStyles()

@@ -129,7 +129,7 @@
             // EditBtn
             // 
             EditBtn.BackColor = Color.Transparent;
-            EditBtn.BackgroundImage = Properties.Resources.Group_3__1_;
+            EditBtn.BackgroundImage = Properties.Resources.Edit;
             EditBtn.BackgroundImageLayout = ImageLayout.Stretch;
             EditBtn.FlatAppearance.BorderSize = 0;
             EditBtn.FlatStyle = FlatStyle.Popup;
@@ -199,7 +199,7 @@
             // button1
             // 
             button1.BackColor = Color.Transparent;
-            button1.BackgroundImage = Properties.Resources.Group_3__1_;
+            button1.BackgroundImage = Properties.Resources.Delit;
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Popup;

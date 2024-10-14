@@ -15,15 +15,7 @@ namespace DataGrid_Kova.Forms
         public DataGridCarView()
         {
             InitializeComponent();
-
-            CreateCarCard("Koenigsegg", "Sport", "$99.00/day", Properties.Resources.car_1);
-            CreateCarCard("Nissan GT-R", "Sport", "$99.00/day", Properties.Resources.car_1);
-            CreateCarCard("Rolls-Royce", "Sedan", "$99.00/day", Properties.Resources.car_1);
-
-            ExitBtn.FlatStyle = FlatStyle.Flat;
-            ExitBtn.BackColor = Color.Transparent;
-            ExitBtn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            ExitBtn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            SetButtonStyles();
         }
 
         private void CreateCarCard(string carbrand, string carNumber, string Mileage, Image carImage)
@@ -39,5 +31,34 @@ namespace DataGrid_Kova.Forms
             flowLayoutPanel.Controls.Add(carCard);
         }
 
+        private void SetButtonStyles()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is Button btn)
+                {
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.BackColor = Color.Transparent;
+                    btn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+                    btn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var addCar = new AddCarForm();
+            if (addCar.ShowDialog() == DialogResult.Cancel)
+            {
+                CreateCarCard("Koenigsegg", "Sport", "$99.00/day", Properties.Resources.car_1);
+            }
+        }
+
+        private void ExitBtn_Click_1(object sender, EventArgs e)
+        {
+            var main = new MainForm();
+            main.Show();
+            Close();
+        }
     }
 }

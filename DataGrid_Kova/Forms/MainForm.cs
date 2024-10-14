@@ -18,12 +18,13 @@ namespace DataGrid_Kova
         private void ViewAllCarsBtn_Click(object sender, EventArgs e)
         {
             var viewCarForm = new DataGridCarView();
-            if (viewCarForm.ShowDialog(this) == DialogResult.OK)
-            {
-                //await peopleManager.AddAsync(personForm.Person);
-                //bindingSource.ResetBindings(false);
-                //SetStast();
-            }
+            Hide();
+            viewCarForm.ShowDialog();
+        }
+
+        private void ExitBtn_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

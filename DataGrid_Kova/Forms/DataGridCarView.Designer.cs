@@ -29,67 +29,73 @@
         private void InitializeComponent()
         {
             ExitBtn = new Button();
-            pictureBox1 = new PictureBox();
             flowLayoutPanel = new FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            button1 = new Button();
             SuspendLayout();
             // 
             // ExitBtn
             // 
             ExitBtn.BackColor = Color.Transparent;
             ExitBtn.BackgroundImage = Properties.Resources.Group_2;
-            ExitBtn.BackgroundImageLayout = ImageLayout.Center;
+            ExitBtn.BackgroundImageLayout = ImageLayout.Zoom;
             ExitBtn.FlatAppearance.BorderSize = 0;
             ExitBtn.FlatStyle = FlatStyle.Popup;
             ExitBtn.Font = new Font("Segoe UI Light", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             ExitBtn.ForeColor = Color.Transparent;
-            ExitBtn.Location = new Point(1064, 12);
+            ExitBtn.Location = new Point(545, 12);
             ExitBtn.Name = "ExitBtn";
             ExitBtn.Size = new Size(82, 57);
             ExitBtn.TabIndex = 3;
             ExitBtn.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = Properties.Resources.car_1;
-            pictureBox1.Location = new Point(613, 715);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(558, 254);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
+            ExitBtn.Click += ExitBtn_Click_1;
             // 
             // flowLayoutPanel
             // 
+            flowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel.AutoScroll = true;
             flowLayoutPanel.BackColor = Color.Transparent;
-            flowLayoutPanel.Location = new Point(12, 128);
+            flowLayoutPanel.Location = new Point(12, 75);
             flowLayoutPanel.Name = "flowLayoutPanel";
-            flowLayoutPanel.Size = new Size(1134, 708);
+            flowLayoutPanel.Size = new Size(615, 827);
             flowLayoutPanel.TabIndex = 6;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImage = Properties.Resources.ADD;
+            button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Segoe UI Light", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            button1.ForeColor = Color.Transparent;
+            button1.Location = new Point(432, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(107, 57);
+            button1.TabIndex = 7;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // DataGridCarView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Frame_2;
+            BackColor = Color.FromArgb(192, 192, 255);
             CancelButton = ExitBtn;
-            ClientSize = new Size(1158, 959);
+            ClientSize = new Size(638, 914);
             ControlBox = false;
-            Controls.Add(pictureBox1);
+            Controls.Add(button1);
             Controls.Add(flowLayoutPanel);
             Controls.Add(ExitBtn);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "DataGridCarView";
             StartPosition = FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button ExitBtn;
-        private PictureBox pictureBox1;
         private FlowLayoutPanel flowLayoutPanel;
+        private Button button1;
     }
 }

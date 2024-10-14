@@ -58,7 +58,7 @@
             ExitBtn.SizeMode = PictureBoxSizeMode.CenterImage;
             ExitBtn.TabIndex = 1;
             ExitBtn.TabStop = false;
-            ExitBtn.Click += ExitBtn_Click;
+            ExitBtn.Click += ExitBtn_Click_1;
             // 
             // MainForm
             // 
