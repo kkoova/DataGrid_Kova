@@ -30,7 +30,6 @@ namespace DataGrid_Kova
             CostRentText.Text = car.CostRent;
             FuelReserveText.Text = car.FuelReserve;
             RentalAmountText.Text = car.RentalAmount;
-            //CarPictBox.Image = car.Image;
         }
 
         private void SetRandomBackColor()
@@ -50,10 +49,8 @@ namespace DataGrid_Kova
         {
             foreach (Control control in Controls)
             {
-                if (control is Button)
+                if (control is Button btn)
                 {
-                    var btn = (Button)control;
-
                     btn.FlatStyle = FlatStyle.Flat;
                     btn.BackColor = Color.Transparent;
                     btn.FlatAppearance.MouseDownBackColor = Color.Transparent;

@@ -17,7 +17,10 @@ namespace DataGrid_Kova
 
         private void ViewAllCarsBtn_Click(object sender, EventArgs e)
         {
-            var viewCarForm = new DataGridCarView();
+            var storage = new MemoryCarStorage();
+            var manager = new CarManager(storage);
+
+            var viewCarForm = new DataGridCarView(storage);
             Hide();
             viewCarForm.ShowDialog();
         }

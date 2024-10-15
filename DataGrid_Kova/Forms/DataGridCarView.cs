@@ -9,24 +9,10 @@ namespace DataGrid_Kova.Forms
         public DataGridCarView(ICarManager carManager)
         {
             this.carManager = carManager;
-            bindingSource = [];
 
             InitializeComponent();
             SetButtonStyles();
-        }
-
-        private void CreateCarCard(string carbrand, string carNumber, string Mileage, Image carImage)
-        {
-
-            CarCard carCard = new()
-            {
-                //Carbrand = carbrand,
-                //Number = carNumber,
-                //Mileage = Mileage,
-                //CarImage = carImage
-            };
-
-            flowLayoutPanel.Controls.Add(carCard);
+            LoadCarCardsAsync();
         }
 
         private void SetButtonStyles()
@@ -49,8 +35,33 @@ namespace DataGrid_Kova.Forms
             if (addCar.ShowDialog(this) == DialogResult.OK)
             {
                 await carManager.AddAsync(addCar.Car);
+                await LoadCarCardsAsync();
             }
         }
+
+        private async Task LoadCarCardsAsync()
+        {
+            try
+            {
+                var cars = await carManager.GetAllAsync();
+
+                flowLayoutPanel.Controls.Clear();
+
+                foreach (var car in cars)
+                {
+                    CarCard carCard = new CarCard();
+
+                    carCard.SetCar(car);
+
+                    flowLayoutPanel.Controls.Add(carCard);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при загрузке данных автомобилей: {ex.Message}");
+            }
+        }
+
 
         private void ExitBtn_Click_1(object sender, EventArgs e)
         {

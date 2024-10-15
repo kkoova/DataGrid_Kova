@@ -173,9 +173,39 @@ namespace DataGrid_Kova.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HyundaiCrossImage {
+            get {
+                object obj = ResourceManager.GetObject("HyundaiCrossImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap key {
             get {
                 object obj = ResourceManager.GetObject("key", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LadavestaImage {
+            get {
+                object obj = ResourceManager.GetObject("LadavestaImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MitsubishiOutlanderImage {
+            get {
+                object obj = ResourceManager.GetObject("MitsubishiOutlanderImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
