@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGrid.Framework.Contracts.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,15 @@ namespace DataGrid_Kova.Forms
 {
     public partial class DataGridCarView : Form
     {
+        private BindingSource bindingSource;
+        private List<Car> car;
+
         public DataGridCarView()
         {
+            bindingSource = new BindingSource();
+            car = new List<Car>();
+            bindingSource.DataSource = car;
+
             InitializeComponent();
             SetButtonStyles();
         }

@@ -1,4 +1,4 @@
-﻿using DataGrid_Kova.Models;
+﻿using DataGrid.Framework.Contracts.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

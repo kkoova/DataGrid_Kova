@@ -1,4 +1,4 @@
-﻿using DataGrid_Kova.Models;
+﻿using DataGrid.Framework.Contracts.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +30,7 @@ namespace DataGrid_Kova
             CostRentText.Text = car.CostRent;
             FuelReserveText.Text = car.FuelReserve;
             RentalAmountText.Text = car.RentalAmount;
-            CarPictBox.Image = car.CarImage;
+            CarPictBox.Image = car.Image;
         }
 
         private void SetRandomBackColor()

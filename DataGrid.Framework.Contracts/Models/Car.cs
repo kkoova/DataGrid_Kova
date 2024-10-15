@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataGrid_Kova.Models
+namespace DataGrid.Framework.Contracts.Models
 {
 
     public class Car
