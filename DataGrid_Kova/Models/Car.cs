@@ -9,9 +9,10 @@ namespace DataGrid_Kova.Models
 {
 
     public class Car
-    {
+    { 
+        public Guid Id { get; set; }
         /// <summary>
-        /// Название автомобиля
+        /// <inheritdoc cref="DataGrid_Kova.Models.Brand"/>
         /// </summary>
         [Required]
         [StringLength(50, MinimumLength = 1)]
@@ -55,35 +56,16 @@ namespace DataGrid_Kova.Models
         /// <summary>
         /// Запас топлива
         /// </summary>
-        [Required]
-        [RegularExpression(@"^\d+ $", ErrorMessage = "Запас топлива должен быть в формате: 'число '.")]
         public string FuelReserve { get; set; }
 
         /// <summary>
         /// Сумма аренды
         /// </summary>
-        [Required]
-        [RegularExpression(@"^\$\d+\.?\d{0,2}$", ErrorMessage = "Сумма аренды должна быть в формате: '$число'.")]
         public string RentalAmount { get; set; }
 
         /// <summary>
         /// Изображение автомобиля
         /// </summary>
-        [Required(ErrorMessage = "Изображение автомобиля обязательно.")]
         public Image CarImage { get; set; }
-
-        public Car(string carbrand, string number, string mileage, string averageFuelConsumption,
-                   string fuelVolume, string costRent, string fuelReserve, string rentalAmount, Image carImage)
-        {
-            Carbrand = carbrand;
-            Number = number;
-            Mileage = mileage;
-            AverageFuelConsumption = averageFuelConsumption;
-            FuelVolume = fuelVolume;
-            CostRent = costRent;
-            FuelReserve = fuelReserve;
-            RentalAmount = rentalAmount;
-            CarImage = carImage;
-        }
     }
 }

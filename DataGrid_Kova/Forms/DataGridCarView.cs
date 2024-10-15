@@ -20,12 +20,13 @@ namespace DataGrid_Kova.Forms
 
         private void CreateCarCard(string carbrand, string carNumber, string Mileage, Image carImage)
         {
+
             CarCard carCard = new()
             {
-                Carbrand = carbrand,
-                Number = carNumber,
-                Mileage = Mileage,
-                CarImage = carImage
+                //Carbrand = carbrand,
+                //Number = carNumber,
+                //Mileage = Mileage,
+                //CarImage = carImage
             };
 
             flowLayoutPanel.Controls.Add(carCard);

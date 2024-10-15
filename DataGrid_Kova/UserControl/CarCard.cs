@@ -35,7 +35,7 @@ namespace DataGrid_Kova
 
         private void SetRandomBackColor()
         {
-            string[] colors = ["#dfe5f6", "#dbeaff", "#ffdbea"];
+            string[] colors = { "#dfe5f6", "#dbeaff", "#ffdbea" };
 
             Random random = new();
 

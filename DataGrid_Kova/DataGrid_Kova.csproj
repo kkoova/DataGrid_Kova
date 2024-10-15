@@ -2,17 +2,11 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Logic\**" />
-    <EmbeddedResource Remove="Logic\**" />
-    <None Remove="Logic\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <EditorConfigFiles Remove="C:\Users\Korobeynikova\source\repos\DataGrid_Kova\DataGrid_Kova\.editorconfig" />
@@ -20,6 +14,12 @@
 
   <ItemGroup>
     <None Include="C:\Users\Korobeynikova\source\repos\DataGrid_Kova\DataGrid_Kova\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BindingLibraryKova">
+      <HintPath>..\..\BindingLibraryKova\bin\Release\net7.0-windows\BindingLibraryKova.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +35,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Logic\" />
   </ItemGroup>
 
 </Project>
