@@ -1,4 +1,4 @@
-﻿using DataGrid.Framework.Contracts.Models;
+﻿using DataGrid.Contracts.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,16 +30,16 @@ namespace DataGrid_Kova
             CostRentText.Text = car.CostRent;
             FuelReserveText.Text = car.FuelReserve;
             RentalAmountText.Text = car.RentalAmount;
-            CarPictBox.Image = car.Image;
+            //CarPictBox.Image = car.Image;
         }
 
         private void SetRandomBackColor()
         {
-            string[] colors = { "#dfe5f6", "#dbeaff", "#ffdbea" };
+            string[] colors = ["#dfe5f6", "#dbeaff", "#ffdbea"];
 
             Random random = new();
 
-            int randomIndex = random.Next(colors.Length);
+            var randomIndex = random.Next(colors.Length);
 
             Color randomColor = ColorTranslator.FromHtml(colors[randomIndex]);
 
@@ -48,11 +48,11 @@ namespace DataGrid_Kova
 
         private void SetButtonStyles()
         {
-            foreach (Control control in this.Controls)
+            foreach (Control control in Controls)
             {
                 if (control is Button)
                 {
-                    Button btn = (Button)control;
+                    var btn = (Button)control;
 
                     btn.FlatStyle = FlatStyle.Flat;
                     btn.BackColor = Color.Transparent;

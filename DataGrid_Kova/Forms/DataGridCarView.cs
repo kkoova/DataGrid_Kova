@@ -1,26 +1,15 @@
-﻿using DataGrid.Contracts.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using DataGrid.Contracts;
 
 namespace DataGrid_Kova.Forms
 {
     public partial class DataGridCarView : Form
     {
-        private BindingSource bindingSource;
-        private List<Car> car;
+        private readonly ICarManager carManager;
 
-        public DataGridCarView()
+        public DataGridCarView(ICarManager carManager)
         {
-            bindingSource = new BindingSource();
-            car = new List<Car>();
-            bindingSource.DataSource = car;
+            this.carManager = carManager;
+            bindingSource = [];
 
             InitializeComponent();
             SetButtonStyles();
@@ -42,7 +31,7 @@ namespace DataGrid_Kova.Forms
 
         private void SetButtonStyles()
         {
-            foreach (Control control in this.Controls)
+            foreach (Control control in Controls)
             {
                 if (control is Button btn)
                 {
@@ -54,12 +43,12 @@ namespace DataGrid_Kova.Forms
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void AddBtn_Click(object sender, EventArgs e)
         {
             var addCar = new AddCarForm();
-            if (addCar.ShowDialog() == DialogResult.Cancel)
+            if (addCar.ShowDialog(this) == DialogResult.OK)
             {
-                CreateCarCard("Koenigsegg", "Sport", "$99.00/day", Properties.Resources.car_1);
+                await carManager.AddAsync(addCar.Car);
             }
         }
 

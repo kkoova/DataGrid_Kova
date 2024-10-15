@@ -4,11 +4,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace DataGrid.Contracts.Models
 {
-
+    /// <summary>
+    /// Машина
+    /// </summary>
     public class Car
     {
         public Guid Id { get; set; }
@@ -67,6 +68,6 @@ namespace DataGrid.Contracts.Models
         /// <summary>
         /// Изображение автомобиля
         /// </summary>
-        public Image CarImage { get; set; }
+        //public Image CarImage { get; set; }
     }
 }

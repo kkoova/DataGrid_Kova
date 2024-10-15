@@ -11,18 +11,19 @@ using BindingLibraryKova;
 using DataGrid.Contracts.Models;
 using DataGrid_Kova.Logic;
 
-
 namespace DataGrid_Kova.Forms
 {
     public partial class AddCarForm : Form
     {
-        public readonly Car car;
+        private readonly Car car;
 
         public AddCarForm(Car? car = null)
         {
             this.car = car == null
-            ? CreateCar.Create (x =>
-            { })
+            ? CreateCar.Create(x =>
+            {
+                x.Id = Guid.NewGuid();
+            })
             : new Car
             {
                 Id = car.Id,
@@ -41,6 +42,10 @@ namespace DataGrid_Kova.Forms
             {
                 brandcomboBox.Items.Add(item);
             }
+            if (brandcomboBox.Items.Count > 0)
+            {
+                brandcomboBox.SelectedIndex = 0;
+            }
 
             brandcomboBox.AddBinding(x => x.SelectedItem, this.car, x => x.Carbrand, errorProvider);
             StateNumberText.AddBinding(x => x.Text, this.car, x => x.Number, errorProvider);
@@ -48,6 +53,8 @@ namespace DataGrid_Kova.Forms
             CurrentFuelVolumeText.AddBinding(x => x.Text, this.car, x => x.FuelVolume, errorProvider);
             RentalPriceText.AddBinding(x => x.Text, this.car, x => x.CostRent, errorProvider);
         }
+
+        public Car Car => car;
 
         private void SetButtonStyles()
         {

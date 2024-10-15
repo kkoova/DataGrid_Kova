@@ -30,7 +30,7 @@
         {
             ExitBtn = new Button();
             flowLayoutPanel = new FlowLayoutPanel();
-            button1 = new Button();
+            AddBtn = new Button();
             SuspendLayout();
             // 
             // ExitBtn
@@ -59,21 +59,21 @@
             flowLayoutPanel.Size = new Size(615, 827);
             flowLayoutPanel.TabIndex = 6;
             // 
-            // button1
+            // AddBtn
             // 
-            button1.BackColor = Color.Transparent;
-            button1.BackgroundImage = Properties.Resources.ADD;
-            button1.BackgroundImageLayout = ImageLayout.Zoom;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Segoe UI Light", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button1.ForeColor = Color.Transparent;
-            button1.Location = new Point(432, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(107, 57);
-            button1.TabIndex = 7;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            AddBtn.BackColor = Color.Transparent;
+            AddBtn.BackgroundImage = Properties.Resources.ADD;
+            AddBtn.BackgroundImageLayout = ImageLayout.Zoom;
+            AddBtn.FlatAppearance.BorderSize = 0;
+            AddBtn.FlatStyle = FlatStyle.Popup;
+            AddBtn.Font = new Font("Segoe UI Light", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            AddBtn.ForeColor = Color.Transparent;
+            AddBtn.Location = new Point(432, 12);
+            AddBtn.Name = "AddBtn";
+            AddBtn.Size = new Size(107, 57);
+            AddBtn.TabIndex = 7;
+            AddBtn.UseVisualStyleBackColor = false;
+            AddBtn.Click += AddBtn_Click;
             // 
             // DataGridCarView
             // 
@@ -83,7 +83,7 @@
             CancelButton = ExitBtn;
             ClientSize = new Size(638, 914);
             ControlBox = false;
-            Controls.Add(button1);
+            Controls.Add(AddBtn);
             Controls.Add(flowLayoutPanel);
             Controls.Add(ExitBtn);
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -96,6 +96,6 @@
 
         private Button ExitBtn;
         private FlowLayoutPanel flowLayoutPanel;
-        private Button button1;
+        private Button AddBtn;
     }
 }

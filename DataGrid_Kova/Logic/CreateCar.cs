@@ -1,4 +1,4 @@
-﻿using DataGrid.Framework.Contracts.Models;
+﻿using DataGrid.Contracts.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ namespace DataGrid_Kova.Logic
 {
     internal class CreateCar
     {
-        public static Car Create(Action<Car> sett = null)
+        public static Car Create(Action<Car>? sett = null)
         {
             var result = new Car
             {
