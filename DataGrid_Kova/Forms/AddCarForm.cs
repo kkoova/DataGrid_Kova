@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DataGrid.Framework.Contracts.Models;
 using BindingLibraryKova;
+using DataGrid.Contracts.Models;
 using DataGrid_Kova.Logic;
 
 

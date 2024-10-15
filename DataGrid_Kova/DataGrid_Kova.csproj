@@ -2,25 +2,11 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
-  <ItemGroup>
-    <EditorConfigFiles Remove="C:\Users\Korobeynikova\source\repos\DataGrid_Kova\DataGrid_Kova\.editorconfig" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="C:\Users\Korobeynikova\source\repos\DataGrid_Kova\DataGrid_Kova\.editorconfig" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="BindingLibraryKova">
-      <HintPath>..\..\BindingLibraryKova\bin\Release\net7.0-windows\BindingLibraryKova.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
@@ -39,6 +25,14 @@
 
   <ItemGroup>
     <Folder Include="Logic\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BindingLibraryKova" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataGrid.Contracts\DataGrid.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
