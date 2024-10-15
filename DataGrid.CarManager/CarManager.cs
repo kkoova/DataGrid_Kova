@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataGrid.CarManager.Models;
 using DataGrid.Contracts;
 using DataGrid.Contracts.Models;
 using DataGrid.Framework.Contracts;
@@ -41,12 +42,8 @@ namespace DataGrid.CarManager
             var result = await carStorage.GetAllAsync();
             return new CarStatsModel
             {
-                Count = result.Count,
-                MaleCount = result.Where(x => x.Gender == Gender.Male).Count(),
-                FemaleCount = result.Where(x => x.Gender == Gender.Female).Count(),
-                DebtCount = result.Where(x => x.Debt).Count(),
-                ExpelledCount = result.Where(x => x.Expelled).Count(),
-                AverageRate = result.DefaultIfEmpty(new Person()).Average(x => x.AvgRate),
+                CountCar = result.Count,
+                CarLowFlue = result.Where(x => Convert.ToInt16(x.FuelVolume) < 7).Count(),
             };
         }
     }

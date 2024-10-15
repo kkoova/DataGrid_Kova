@@ -190,10 +190,11 @@
             // 
             // AddCarForm
             // 
+            AcceptButton = AddBtn;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Frame_2;
-            CancelButton = AddBtn;
+            CancelButton = ExitBtn;
             ClientSize = new Size(248, 367);
             ControlBox = false;
             Controls.Add(RentalPriceText);

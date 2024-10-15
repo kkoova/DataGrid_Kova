@@ -32,7 +32,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DataGrid.CarManager\DataGrid.CarManager.csproj" />
     <ProjectReference Include="..\DataGrid.Contracts\DataGrid.Contracts.csproj" />
+    <ProjectReference Include="..\DataGrid.Memory\DataGrid.Memory.csproj" />
   </ItemGroup>
 
 </Project>

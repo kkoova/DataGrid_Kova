@@ -1,3 +1,5 @@
+using DataGrid.CarManager;
+using DataGrid.Memory;
 using DataGrid_Kova.Forms;
 using System.Windows.Forms;
 
@@ -20,7 +22,7 @@ namespace DataGrid_Kova
             var storage = new MemoryCarStorage();
             var manager = new CarManager(storage);
 
-            var viewCarForm = new DataGridCarView(storage);
+            var viewCarForm = new DataGridCarView(manager);
             Hide();
             viewCarForm.ShowDialog();
         }

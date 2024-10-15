@@ -69,6 +69,7 @@
             ControlBox = false;
             Controls.Add(ExitBtn);
             Controls.Add(ViewAllCarsBtn);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;

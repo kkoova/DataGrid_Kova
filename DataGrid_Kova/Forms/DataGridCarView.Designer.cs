@@ -86,6 +86,7 @@
             Controls.Add(AddBtn);
             Controls.Add(flowLayoutPanel);
             Controls.Add(ExitBtn);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "DataGridCarView";
             StartPosition = FormStartPosition.CenterScreen;

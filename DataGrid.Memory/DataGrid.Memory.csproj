@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2F82E81C-9C37-46A0-81FF-498FC26755C2}</ProjectGuid>
+    <ProjectGuid>{61BC5199-C1E4-49F8-8BC0-C166B240D35E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataGrid.Contracts</RootNamespace>
-    <AssemblyName>DataGrid.Contracts</AssemblyName>
+    <RootNamespace>DataGrid.Memory</RootNamespace>
+    <AssemblyName>DataGrid.Memory</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,12 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICarManager.cs" />
-    <Compile Include="ICarStats.cs" />
-    <Compile Include="ICarStorage.cs" />
-    <Compile Include="Models\Brand.cs" />
-    <Compile Include="Models\Car.cs" />
+    <Compile Include="MemoryCarStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataGrid.Contracts\DataGrid.Contracts.csproj">
+      <Project>{2f82e81c-9c37-46a0-81ff-498fc26755c2}</Project>
+      <Name>DataGrid.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

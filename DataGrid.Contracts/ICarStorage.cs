@@ -9,9 +9,9 @@ namespace DataGrid.Framework.Contracts
     {
         Task<IReadOnlyCollection<Car>> GetAllAsync();
 
-        Task<Car> AddAsync(Car person);
+        Task<Car> AddAsync(Car car);
 
-        Task EditAsync(Car person);
+        Task EditAsync(Car car);
 
         Task<bool> DeleteAsync(Guid id);
     }

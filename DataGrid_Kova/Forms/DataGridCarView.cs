@@ -6,6 +6,10 @@ namespace DataGrid_Kova.Forms
     {
         private readonly ICarManager carManager;
 
+        /// <summary>
+        /// Инициализация нового экземпляра <see cref="DataGridCarView" />
+        /// </summary>
+        /// <param name="carManager"></param>
         public DataGridCarView(ICarManager carManager)
         {
             this.carManager = carManager;
@@ -49,7 +53,7 @@ namespace DataGrid_Kova.Forms
 
                 foreach (var car in cars)
                 {
-                    CarCard carCard = new CarCard();
+                    var carCard = new CarCard();
 
                     carCard.SetCar(car);
 

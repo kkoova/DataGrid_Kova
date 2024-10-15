@@ -16,47 +16,46 @@ namespace DataGrid.Contracts.Models
         /// <summary>
         /// <inheritdoc cref="DataGrid_Kova.Models.Brand"/>
         /// </summary>
-        [Required]
-        [StringLength(50, MinimumLength = 1)]
+        [Required(ErrorMessage = "Заполните поля!")]
         public string Carbrand { get; set; }
 
         /// <summary>
-        /// Номер автомобиля (гос. номер)
+        /// Гос номер
         /// </summary>
-        [Required]
+        [Required(ErrorMessage = "Заполните поля!")]
         [StringLength(10, MinimumLength = 1, ErrorMessage = "Номер должен быть длиной от 1 до 10 символов.")]
         public string Number { get; set; }
 
         /// <summary>
-        /// Пробег автомобиля
+        /// Пробег
         /// </summary>
-        [Required]
-        [RegularExpression(@"^\d+ $", ErrorMessage = "Пробег должен быть в формате: 'число'.")]
+        [Required(ErrorMessage = "Заполните поля!")]
+        [RegularExpression(@"\d $", ErrorMessage = "Пробег должен быть в формате: число")]
         public string Mileage { get; set; }
 
         /// <summary>
-        /// Средний расход топлива
+        /// Средний расход топлива за час
         /// </summary>
-        [Required]
-        [RegularExpression(@"^\d+ $", ErrorMessage = "Средний расход должен быть в формате: 'число'.")]
+        [Required(ErrorMessage = "Заполните поля!")]
+        [StringLength(10, MinimumLength = 1, ErrorMessage = "Длина  от 1 до 10 символов.")]
         public string AverageFuelConsumption { get; set; }
 
         /// <summary>
-        /// Объем топливного бака
+        /// Текущий объем топлива
         /// </summary>
-        [Required]
-        [RegularExpression(@"^\d+ $", ErrorMessage = "Объем топлива должен быть в формате: 'число'.")]
+        [Required(ErrorMessage = "Заполните поля!")]
+        [RegularExpression(@"\d $", ErrorMessage = "Объем топлива должен быть в формате: число")]
         public string FuelVolume { get; set; }
 
         /// <summary>
-        /// Стоимость аренды
+        /// Стоимость аренды (за минуту)
         /// </summary>
-        [Required]
-        [RegularExpression(@"^\$\d+\.?\d{0,2}$", ErrorMessage = "Стоимость должна быть в формате: '$число'.")]
+        [Required(ErrorMessage = "Заполните поля!")]
+        [RegularExpression(@"\d", ErrorMessage = "Стоимость должна быть в формате: число")]
         public string CostRent { get; set; }
 
         /// <summary>
-        /// Запас топлива
+        /// Запас хода топлива
         /// </summary>
         public string FuelReserve { get; set; }
 
@@ -64,10 +63,5 @@ namespace DataGrid.Contracts.Models
         /// Сумма аренды
         /// </summary>
         public string RentalAmount { get; set; }
-
-        /// <summary>
-        /// Изображение автомобиля
-        /// </summary>
-        //public Image CarImage { get; set; }
     }
 }

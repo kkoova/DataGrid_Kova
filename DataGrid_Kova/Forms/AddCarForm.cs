@@ -47,7 +47,7 @@ namespace DataGrid_Kova.Forms
                 brandcomboBox.SelectedIndex = 0;
             }
 
-            brandcomboBox.AddBinding(x => x.SelectedItem, this.car, x => x.Carbrand, errorProvider);
+            brandcomboBox.AddBinding(x => x.SelectedItem, this.car, x => x.Carbrand);
             StateNumberText.AddBinding(x => x.Text, this.car, x => x.Number, errorProvider);
             MillText.AddBinding(x => x.Text, this.car, x => x.Mileage, errorProvider);
             CurrentFuelVolumeText.AddBinding(x => x.Text, this.car, x => x.FuelVolume, errorProvider);

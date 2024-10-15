@@ -13,7 +13,7 @@ namespace DataGrid.Contracts
     /// </summary>
     public interface ICarManager
     {
-        Task<IReadOnlyCollection<Car>> GetAll();
+        Task<IReadOnlyCollection<Car>> GetAllAsync();
 
         Task<Car> AddAsync(Car car);
 
@@ -21,6 +21,6 @@ namespace DataGrid.Contracts
 
         Task<bool> DeleteAsync(Guid id);
 
-        Task<ICarManager> GetAllAsync();
+        Task<ICarStats> GetStatsAsync();
     }
 }
