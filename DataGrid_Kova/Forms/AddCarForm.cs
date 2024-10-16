@@ -36,7 +36,6 @@ namespace DataGrid_Kova.Forms
             };
 
             InitializeComponent();
-            SetButtonStyles();
             addBtn.DialogResult = DialogResult.OK;
 
             foreach (var item in Enum.GetValues(typeof(Brand)))
@@ -57,19 +56,5 @@ namespace DataGrid_Kova.Forms
         }
 
         public Car Car => car;
-
-        private void SetButtonStyles()
-        {
-            foreach (Control control in Controls)
-            {
-                if (control is Button btn)
-                {
-                    btn.FlatStyle = FlatStyle.Flat;
-                    btn.BackColor = Color.Transparent;
-                    btn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-                    btn.FlatAppearance.MouseOverBackColor = Color.Transparent;
-                }
-            }
-        }
     }
 }

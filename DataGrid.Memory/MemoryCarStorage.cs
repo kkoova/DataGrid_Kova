@@ -42,8 +42,6 @@ namespace DataGrid.Memory
                 target.AverageFuelConsumption = car.AverageFuelConsumption;
                 target.FuelVolume = car.FuelVolume;
                 target.CostRent = car.CostRent;
-                target.FuelReserve = car.FuelReserve;
-                target.RentalAmount = car.RentalAmount;
             }
             return Task.CompletedTask;
         }

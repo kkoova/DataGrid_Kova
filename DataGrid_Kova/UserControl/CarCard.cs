@@ -13,23 +13,29 @@ namespace DataGrid_Kova
 {
     public partial class CarCard : UserControl
     {
+        public event EventHandler EditButtonClicked;
+        public event EventHandler DeleteButtonClicked;
+
         public CarCard()
         {
             InitializeComponent();
             SetRandomBackColor();
-            SetButtonStyles();
+
+            dellbtn.Click += (s, e) => DeleteButtonClicked?.Invoke(this, EventArgs.Empty);
+            editButton.Click += (s, e) => EditButtonClicked?.Invoke(this, EventArgs.Empty);
         }
 
         public void SetCar(Car car)
         {
             CarbrandText.Text = car.Carbrand;
             NomerText.Text = car.Number;
-            MileageText.Text = car.Mileage;
-            AverageFueText.Text = car.AverageFuelConsumption;
-            FuelVolumeText.Text = car.FuelVolume;
-            CostRentText.Text = car.CostRent;
-            FuelReserveText.Text = (Convert.ToInt16(car.FuelVolume)/ Convert.ToInt16(car.AverageFuelConsumption)).ToString();
-            RentalAmountText.Text = (Convert.ToInt16(car.FuelVolume) / Convert.ToInt16(car.AverageFuelConsumption) * Convert.ToInt16(car.CostRent)).ToString();
+            MileageText.Text = car.Mileage.ToString();
+            AverageFueText.Text = car.AverageFuelConsumption.ToString();
+            FuelVolumeText.Text = car.FuelVolume.ToString();
+            CostRentText.Text = car.CostRent.ToString();
+
+            FuelReserveText.Text = car.FuelReserve.ToString("F2") + " ч.";
+            RentalAmountText.Text = "$" + car.RentalAmount.ToString("F2");
             CarPictBox.Image = GetCarImageByBrand(car.Carbrand);
         }
 
@@ -66,20 +72,6 @@ namespace DataGrid_Kova
             Color randomColor = ColorTranslator.FromHtml(colors[randomIndex]);
 
             BackColor = randomColor;
-        }
-
-        private void SetButtonStyles()
-        {
-            foreach (Control control in Controls)
-            {
-                if (control is Button btn)
-                {
-                    btn.FlatStyle = FlatStyle.Flat;
-                    btn.BackColor = Color.Transparent;
-                    btn.FlatAppearance.MouseDownBackColor = Color.Transparent;
-                    btn.FlatAppearance.MouseOverBackColor = Color.Transparent;
-                }
-            }
         }
     }
 }

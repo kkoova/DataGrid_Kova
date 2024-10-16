@@ -12,11 +12,6 @@ namespace DataGrid_Kova
             InitializeComponent();
         }
 
-        private void ExitBtn_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void ViewAllCarsBtn_Click(object sender, EventArgs e)
         {
             var storage = new MemoryCarStorage();

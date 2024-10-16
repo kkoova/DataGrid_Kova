@@ -28,67 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.exBtn = new System.Windows.Forms.Button();
-            this.AddBtn = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            flowLayoutPanel = new FlowLayoutPanel();
+            exBtn = new Button();
+            AddBtn = new Button();
+            label1 = new Label();
+            statusStrip1 = new StatusStrip();
+            AllAvto = new ToolStripStatusLabel();
+            FluelLow = new ToolStripStatusLabel();
+            statusStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // flowLayoutPanel
             // 
-            this.flowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel.AutoScroll = true;
-            this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(12, 75);
-            this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(615, 827);
-            this.flowLayoutPanel.TabIndex = 6;
+            flowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel.AutoScroll = true;
+            flowLayoutPanel.BackColor = Color.Transparent;
+            flowLayoutPanel.Location = new Point(12, 75);
+            flowLayoutPanel.Name = "flowLayoutPanel";
+            flowLayoutPanel.Size = new Size(615, 800);
+            flowLayoutPanel.TabIndex = 6;
             // 
             // exBtn
             // 
-            this.exBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.exBtn.Location = new System.Drawing.Point(525, 12);
-            this.exBtn.Name = "exBtn";
-            this.exBtn.Size = new System.Drawing.Size(101, 46);
-            this.exBtn.TabIndex = 24;
-            this.exBtn.Text = "Выйти";
-            this.exBtn.UseVisualStyleBackColor = true;
+            exBtn.BackColor = Color.Black;
+            exBtn.Font = new Font("Segoe UI Light", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            exBtn.ForeColor = SystemColors.ButtonFace;
+            exBtn.Location = new Point(525, 12);
+            exBtn.Name = "exBtn";
+            exBtn.Size = new Size(101, 46);
+            exBtn.TabIndex = 24;
+            exBtn.Text = "Выйти";
+            exBtn.UseVisualStyleBackColor = false;
             // 
             // AddBtn
             // 
-            this.AddBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.AddBtn.Location = new System.Drawing.Point(404, 12);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(101, 46);
-            this.AddBtn.TabIndex = 23;
-            this.AddBtn.Text = "Добавить машину";
-            this.AddBtn.UseVisualStyleBackColor = true;
-            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            AddBtn.BackColor = Color.FromArgb(89, 114, 244);
+            AddBtn.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            AddBtn.ForeColor = SystemColors.ButtonFace;
+            AddBtn.Location = new Point(327, 12);
+            AddBtn.Name = "AddBtn";
+            AddBtn.Size = new Size(178, 46);
+            AddBtn.TabIndex = 23;
+            AddBtn.Text = "Добавить машину";
+            AddBtn.UseVisualStyleBackColor = false;
+            AddBtn.Click += AddBtn_Click;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(12, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(269, 46);
+            label1.TabIndex = 25;
+            label1.Text = "АвтоПрокат";
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { AllAvto, FluelLow });
+            statusStrip1.Location = new Point(0, 892);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(638, 22);
+            statusStrip1.TabIndex = 26;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // AllAvto
+            // 
+            AllAvto.Name = "AllAvto";
+            AllAvto.Size = new Size(118, 17);
+            AllAvto.Text = "toolStripStatusLabel1";
+            // 
+            // FluelLow
+            // 
+            FluelLow.Name = "FluelLow";
+            FluelLow.Size = new Size(118, 17);
+            FluelLow.Text = "toolStripStatusLabel1";
             // 
             // DataGridCarView
             // 
-            this.AcceptButton = this.AddBtn;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.CancelButton = this.exBtn;
-            this.ClientSize = new System.Drawing.Size(638, 914);
-            this.ControlBox = false;
-            this.Controls.Add(this.exBtn);
-            this.Controls.Add(this.AddBtn);
-            this.Controls.Add(this.flowLayoutPanel);
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "DataGridCarView";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.ResumeLayout(false);
-
+            AcceptButton = AddBtn;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(167, 181, 249);
+            CancelButton = exBtn;
+            ClientSize = new Size(638, 914);
+            ControlBox = false;
+            Controls.Add(statusStrip1);
+            Controls.Add(label1);
+            Controls.Add(exBtn);
+            Controls.Add(AddBtn);
+            Controls.Add(flowLayoutPanel);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Name = "DataGridCarView";
+            StartPosition = FormStartPosition.CenterScreen;
+            Load += DataGridCarView_Load;
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private FlowLayoutPanel flowLayoutPanel;
         private Button exBtn;
         private Button AddBtn;
+        private Label label1;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel AllAvto;
+        private ToolStripStatusLabel FluelLow;
     }
 }
