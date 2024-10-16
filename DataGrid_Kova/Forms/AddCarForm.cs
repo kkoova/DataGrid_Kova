@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BindingLibraryKova;
+﻿using BindingLibraryKova;
 using DataGrid.Contracts.Models;
 using DataGrid_Kova.Logic;
 
@@ -17,6 +8,10 @@ namespace DataGrid_Kova.Forms
     {
         private readonly Car car;
 
+        /// <summary>
+        /// Создает новый экземпляр формы добавления или редактирования автомобиля
+        /// </summary>
+        /// <param name="car">Автомобиль для редактирования. Если null, создается новый автомобиль</param>
         public AddCarForm(Car? car = null)
         {
             this.car = car == null
@@ -55,6 +50,9 @@ namespace DataGrid_Kova.Forms
             CostRentText.AddBinding(x => x.Text, this.car, x => x.CostRent, errorProvider);
         }
 
+        /// <summary>
+        /// Возвращает автомобиль, связанный с данной формой
+        /// </summary>
         public Car Car => car;
     }
 }

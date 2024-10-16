@@ -9,7 +9,7 @@ namespace DataGrid_Kova.Forms
         /// <summary>
         /// Инициализация нового экземпляра <see cref="DataGridCarView" />
         /// </summary>
-        /// <param name="carManager"></param>
+        /// <param name="carManager">Менеджер автомобилей для управления данными автомобилей</param>
         public DataGridCarView(ICarManager carManager)
         {
             this.carManager = carManager;
@@ -17,6 +17,10 @@ namespace DataGrid_Kova.Forms
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Обработчик события клика по кнопке добавления автомобиля
+        /// Открывает форму добавления нового автомобиля и обновляет список автомобилей
+        /// </summary>
         private async void AddBtn_Click(object sender, EventArgs e)
         {
             var addCarForm = new AddCarForm();
@@ -27,6 +31,9 @@ namespace DataGrid_Kova.Forms
             }
         }
 
+        /// <summary>
+        /// Загружает карточки автомобилей и отображает их в элементе управления
+        /// </summary>
         private async Task LoadCarCardsAsync()
         {
             try
@@ -71,6 +78,9 @@ namespace DataGrid_Kova.Forms
             }
         }
 
+        /// <summary>
+        /// Устанавливает статистику автомобилей и отображает ее на форме
+        /// </summary>
         public async Task SetStats()
         {
             var result = await carManager.GetStatsAsync();
@@ -78,6 +88,9 @@ namespace DataGrid_Kova.Forms
             FluelLow.Text = $"Машин с критическим уровнем топлива (<7): {result.CarLowFlue}";
         }
 
+        /// <summary>
+        /// Обработчик события загрузки формы. Устанавливает статистику автомобилей
+        /// </summary>
         private async void DataGridCarView_Load(object sender, EventArgs e)
         {
             await SetStats();

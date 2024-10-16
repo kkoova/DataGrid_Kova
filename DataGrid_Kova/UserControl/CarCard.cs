@@ -11,11 +11,24 @@ using System.Windows.Forms;
 
 namespace DataGrid_Kova
 {
+    /// <summary>
+    /// Представляет карточку автомобиля, отображая его информацию и предоставляя кнопки для редактирования и удаления
+    /// </summary>
     public partial class CarCard : UserControl
     {
-        public event EventHandler EditButtonClicked;
-        public event EventHandler DeleteButtonClicked;
+        /// <summary>
+        /// Событие, возникающее при нажатии кнопки редактирования
+        /// </summary>
+        public event EventHandler? EditButtonClicked = null;
 
+        /// <summary>
+        /// Событие, возникающее при нажатии кнопки удаления
+        /// </summary>
+        public event EventHandler? DeleteButtonClicked = null;
+
+        /// <summary>
+        /// Инициализирует новый экземпляр <see cref="CarCard"/> и настраивает события кнопок
+        /// </summary>
         public CarCard()
         {
             InitializeComponent();
@@ -25,6 +38,10 @@ namespace DataGrid_Kova
             editButton.Click += (s, e) => EditButtonClicked?.Invoke(this, EventArgs.Empty);
         }
 
+        /// <summary>
+        /// Устанавливает информацию о автомобиле в карточке
+        /// </summary>
+        /// <param name="car">Экземпляр автомобиля, информация о котором будет отображена</param>
         public void SetCar(Car car)
         {
             CarbrandText.Text = car.Carbrand;
@@ -39,6 +56,11 @@ namespace DataGrid_Kova
             CarPictBox.Image = GetCarImageByBrand(car.Carbrand);
         }
 
+        /// <summary>
+        /// Получает изображение автомобиля по его марке
+        /// </summary>
+        /// <param name="brandName">Название марки автомобиля</param>
+        /// <returns>Изображение автомобиля</returns>
         public static Image GetCarImageByBrand(string brandName)
         {
             Brand? brand = null;
@@ -61,6 +83,9 @@ namespace DataGrid_Kova
             };
         }
 
+        /// <summary>
+        /// Устанавливает случайный цвет фона для карточки автомобиля
+        /// </summary>
         private void SetRandomBackColor()
         {
             string[] colors = { "#dfe5f6", "#dbeaff", "#ffdbea" };
