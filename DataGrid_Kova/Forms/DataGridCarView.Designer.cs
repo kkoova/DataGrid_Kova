@@ -28,75 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ExitBtn = new Button();
-            flowLayoutPanel = new FlowLayoutPanel();
-            AddBtn = new Button();
-            SuspendLayout();
-            // 
-            // ExitBtn
-            // 
-            ExitBtn.BackColor = Color.Transparent;
-            ExitBtn.BackgroundImage = Properties.Resources.Group_2;
-            ExitBtn.BackgroundImageLayout = ImageLayout.Zoom;
-            ExitBtn.FlatAppearance.BorderSize = 0;
-            ExitBtn.FlatStyle = FlatStyle.Popup;
-            ExitBtn.Font = new Font("Segoe UI Light", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            ExitBtn.ForeColor = Color.Transparent;
-            ExitBtn.Location = new Point(545, 12);
-            ExitBtn.Name = "ExitBtn";
-            ExitBtn.Size = new Size(82, 57);
-            ExitBtn.TabIndex = 3;
-            ExitBtn.UseVisualStyleBackColor = false;
-            ExitBtn.Click += ExitBtn_Click_1;
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.exBtn = new System.Windows.Forms.Button();
+            this.AddBtn = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // flowLayoutPanel
             // 
-            flowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel.AutoScroll = true;
-            flowLayoutPanel.BackColor = Color.Transparent;
-            flowLayoutPanel.Location = new Point(12, 75);
-            flowLayoutPanel.Name = "flowLayoutPanel";
-            flowLayoutPanel.Size = new Size(615, 827);
-            flowLayoutPanel.TabIndex = 6;
+            this.flowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(12, 75);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(615, 827);
+            this.flowLayoutPanel.TabIndex = 6;
+            // 
+            // exBtn
+            // 
+            this.exBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.exBtn.Location = new System.Drawing.Point(525, 12);
+            this.exBtn.Name = "exBtn";
+            this.exBtn.Size = new System.Drawing.Size(101, 46);
+            this.exBtn.TabIndex = 24;
+            this.exBtn.Text = "Выйти";
+            this.exBtn.UseVisualStyleBackColor = true;
             // 
             // AddBtn
             // 
-            AddBtn.BackColor = Color.Transparent;
-            AddBtn.BackgroundImage = Properties.Resources.ADD;
-            AddBtn.BackgroundImageLayout = ImageLayout.Zoom;
-            AddBtn.FlatAppearance.BorderSize = 0;
-            AddBtn.FlatStyle = FlatStyle.Popup;
-            AddBtn.Font = new Font("Segoe UI Light", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            AddBtn.ForeColor = Color.Transparent;
-            AddBtn.Location = new Point(432, 12);
-            AddBtn.Name = "AddBtn";
-            AddBtn.Size = new Size(107, 57);
-            AddBtn.TabIndex = 7;
-            AddBtn.UseVisualStyleBackColor = false;
-            AddBtn.Click += AddBtn_Click;
+            this.AddBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.AddBtn.Location = new System.Drawing.Point(404, 12);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(101, 46);
+            this.AddBtn.TabIndex = 23;
+            this.AddBtn.Text = "Добавить машину";
+            this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // DataGridCarView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(192, 192, 255);
-            CancelButton = ExitBtn;
-            ClientSize = new Size(638, 914);
-            ControlBox = false;
-            Controls.Add(AddBtn);
-            Controls.Add(flowLayoutPanel);
-            Controls.Add(ExitBtn);
-            DoubleBuffered = true;
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            Name = "DataGridCarView";
-            StartPosition = FormStartPosition.CenterScreen;
-            ResumeLayout(false);
+            this.AcceptButton = this.AddBtn;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.CancelButton = this.exBtn;
+            this.ClientSize = new System.Drawing.Size(638, 914);
+            this.ControlBox = false;
+            this.Controls.Add(this.exBtn);
+            this.Controls.Add(this.AddBtn);
+            this.Controls.Add(this.flowLayoutPanel);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Name = "DataGridCarView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ResumeLayout(false);
+
         }
 
         #endregion
-
-        private Button ExitBtn;
         private FlowLayoutPanel flowLayoutPanel;
+        private Button exBtn;
         private Button AddBtn;
     }
 }

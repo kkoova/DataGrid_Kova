@@ -37,6 +37,7 @@ namespace DataGrid_Kova.Forms
 
             InitializeComponent();
             SetButtonStyles();
+            addBtn.DialogResult = DialogResult.OK;
 
             foreach (var item in Enum.GetValues(typeof(Brand)))
             {
@@ -51,7 +52,8 @@ namespace DataGrid_Kova.Forms
             StateNumberText.AddBinding(x => x.Text, this.car, x => x.Number, errorProvider);
             MillText.AddBinding(x => x.Text, this.car, x => x.Mileage, errorProvider);
             CurrentFuelVolumeText.AddBinding(x => x.Text, this.car, x => x.FuelVolume, errorProvider);
-            RentalPriceText.AddBinding(x => x.Text, this.car, x => x.CostRent, errorProvider);
+            RentalPriceText.AddBinding(x => x.Text, this.car, x => x.AverageFuelConsumption, errorProvider);
+            CostRentText.AddBinding(x => x.Text, this.car, x => x.CostRent, errorProvider);
         }
 
         public Car Car => car;

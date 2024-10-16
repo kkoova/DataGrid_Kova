@@ -20,16 +20,5 @@ namespace DataGrid_Kova.Logic
 
             return result;
         }
-
-        public static Image GetCarImageByBrand(Brand brand)
-        {
-            return brand switch
-            {
-                Brand.HyundaiCross => Properties.Resources.HyundaiCrossImage,
-                Brand.Ladavesta => Properties.Resources.LadavestaImage,
-                Brand.MitsubishiOutlander => Properties.Resources.MitsubishiOutlanderImage,
-                _ => Properties.Resources.car_1,
-            };
-        }
     }
 }

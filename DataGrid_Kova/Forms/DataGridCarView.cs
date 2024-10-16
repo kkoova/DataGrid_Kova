@@ -16,7 +16,6 @@ namespace DataGrid_Kova.Forms
 
             InitializeComponent();
             SetButtonStyles();
-            LoadCarCardsAsync();
         }
 
         private void SetButtonStyles()
@@ -64,14 +63,6 @@ namespace DataGrid_Kova.Forms
             {
                 MessageBox.Show($"Ошибка при загрузке данных автомобилей: {ex.Message}");
             }
-        }
-
-
-        private void ExitBtn_Click_1(object sender, EventArgs e)
-        {
-            var main = new MainForm();
-            main.Show();
-            Close();
         }
     }
 }

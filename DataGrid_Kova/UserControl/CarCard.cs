@@ -25,16 +25,39 @@ namespace DataGrid_Kova
             CarbrandText.Text = car.Carbrand;
             NomerText.Text = car.Number;
             MileageText.Text = car.Mileage;
-            AverageFuelConsumptionText.Text = car.AverageFuelConsumption;
+            AverageFueText.Text = car.AverageFuelConsumption;
             FuelVolumeText.Text = car.FuelVolume;
             CostRentText.Text = car.CostRent;
             FuelReserveText.Text = car.FuelReserve;
             RentalAmountText.Text = car.RentalAmount;
+            CarPictBox.Image = GetCarImageByBrand(car.Carbrand);
+        }
+
+        public static Image GetCarImageByBrand(string brandName)
+        {
+            Brand? brand = null;
+
+            foreach (var b in Enum.GetValues(typeof(Brand)))
+            {
+                if (string.Equals(b.ToString(), brandName, StringComparison.OrdinalIgnoreCase))
+                {
+                    brand = (Brand)b;
+                    break;
+                }
+            }
+
+            return brand switch
+            {
+                Brand.HyundaiCross => Properties.Resources.HyundaiCrossImage,
+                Brand.Ladavesta => Properties.Resources.LadavestaImage,
+                Brand.MitsubishiOutlander => Properties.Resources.MitsubishiOutlanderImage,
+                _ => Properties.Resources.car_1,
+            };
         }
 
         private void SetRandomBackColor()
         {
-            string[] colors = ["#dfe5f6", "#dbeaff", "#ffdbea"];
+            string[] colors = { "#dfe5f6", "#dbeaff", "#ffdbea" };
 
             Random random = new();
 
