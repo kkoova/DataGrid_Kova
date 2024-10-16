@@ -28,8 +28,8 @@ namespace DataGrid_Kova
             AverageFueText.Text = car.AverageFuelConsumption;
             FuelVolumeText.Text = car.FuelVolume;
             CostRentText.Text = car.CostRent;
-            FuelReserveText.Text = car.FuelReserve;
-            RentalAmountText.Text = car.RentalAmount;
+            FuelReserveText.Text = (Convert.ToInt16(car.FuelVolume)/ Convert.ToInt16(car.AverageFuelConsumption)).ToString();
+            RentalAmountText.Text = (Convert.ToInt16(car.FuelVolume) / Convert.ToInt16(car.AverageFuelConsumption) * Convert.ToInt16(car.CostRent)).ToString();
             CarPictBox.Image = GetCarImageByBrand(car.Carbrand);
         }
 
