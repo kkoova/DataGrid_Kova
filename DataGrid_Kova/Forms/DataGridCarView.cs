@@ -5,7 +5,6 @@ namespace DataGrid_Kova.Forms
     public partial class DataGridCarView : Form
     {
         private readonly ICarManager carManager;
-        private readonly CarCard selectedCarCard;
 
         /// <summary>
         /// Инициализация нового экземпляра <see cref="DataGridCarView" />
