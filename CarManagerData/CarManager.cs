@@ -46,7 +46,7 @@ namespace CarManagerData
 
             stopWathc.Stop();
 
-            logger.LogInformation(string.Format(StopWatch, nameof(AddAsync), stopWathc.ElapsedMilliseconds));
+            //logger.LogInformation(string.Format(StopWatch, nameof(AddAsync), stopWathc.ElapsedMilliseconds));
             return result;
         }
 

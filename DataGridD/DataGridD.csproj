@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,7 +17,6 @@
   <ItemGroup>
     <ProjectReference Include="..\CarManagerData\CarManagerData.csproj" />
     <ProjectReference Include="..\Contracts\Contracts.csproj" />
-    <ProjectReference Include="..\Memory\Memory.csproj" />
   </ItemGroup>
 
   <ItemGroup>
