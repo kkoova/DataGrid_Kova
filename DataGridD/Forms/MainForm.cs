@@ -1,7 +1,7 @@
-using MemoryStorage;
 using DataGridD.Forms;
 using CarManagerData;
 using Microsoft.Extensions.Logging;
+using MemoryStorage;
 
 namespace DataGridD
 {
@@ -22,8 +22,9 @@ namespace DataGridD
         /// </summary>
         private void ViewAllCarsBtn_Click(object sender, EventArgs e)
         {
-            ILoggerFactory factory = LoggerFactory.Create(bilder => bilder.AddDebug());
-            ILogger logger = factory.CreateLogger(typeof(MainForm));
+            var factory = LoggerFactory.Create(bilder => bilder.AddDebug());
+            var logger = factory.CreateLogger(typeof(MainForm));
+
             var storage = new MemoryCarStorage();
             var manager = new CarManager(storage, logger);
 

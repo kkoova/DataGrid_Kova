@@ -19,7 +19,7 @@ namespace CarManagerData
     {
         private readonly ICarStorage carStorage;
         private readonly ILogger logger;
-        private const string StopWatch = "{} выполняется {}";
+        private readonly Stopwatch stopwatch;
 
         /// <summary>
         /// Инициализирует новый экземпляр класса <see cref="CarManager"/>
@@ -27,8 +27,9 @@ namespace CarManagerData
         /// <param name="carStorage">Интерфейс хранилища автомобилей</param>
         public CarManager(ICarStorage carStorage, ILogger logger)
         {
-            this.logger = logger;
+            stopwatch = new Stopwatch();
             this.carStorage = carStorage;
+            this.logger = logger;
         }
 
         /// <summary>
@@ -38,15 +39,13 @@ namespace CarManagerData
         /// <returns>Асинхронная задача с результатом добавленного автомобиля</returns>
         public async Task<Car> AddAsync(Car car)
         {
-
-            var stopWathc = new Stopwatch();
-            stopWathc.Start();
+            stopwatch.Restart();
 
             var result = await carStorage.AddAsync(car);
 
-            stopWathc.Stop();
+            stopwatch.Stop();
+            logger.LogInformation("Добавление машины в прокат: {1} мс", stopwatch.ElapsedMilliseconds);
 
-            //logger.LogInformation(string.Format(StopWatch, nameof(AddAsync), stopWathc.ElapsedMilliseconds));
             return result;
         }
 
@@ -57,12 +56,21 @@ namespace CarManagerData
         /// <returns>Асинхронная задача, возвращающая результат операции удаления</returns>
         public async Task<bool> DeleteAsync(Guid id)
         {
+            stopwatch.Restart();
+
             var result = await carStorage.DeleteAsync(id);
+
+            stopwatch.Stop();
 
             if (result)
             {
-                logger.LogInformation("Польхователь с индитивикатором {id} удален");
+                logger.LogInformation("Удаление машины с индетификаторм {0}: {1} мс - успешно", id, stopwatch.ElapsedMilliseconds);
             }
+            else
+            {
+                logger.LogInformation("Удаление машины с индетификаторм {0}: {1} мс - ошибка удаления", id, stopwatch.ElapsedMilliseconds);
+            }
+
             return result;
         }
 
@@ -73,14 +81,32 @@ namespace CarManagerData
         /// <param name="car">Автомобиль с обновленными данными</param>
         /// <returns>Асинхронная задача, обновление информации и машине</returns>
         public Task EditAsync(Car car)
-            => carStorage.EditAsync(car);
+        {
+            stopwatch.Restart();
+
+            var result = carStorage.EditAsync(car);
+
+            stopwatch.Stop();
+            logger.LogInformation("Изменение машины с индетификаторм {0}: {1} мс", car.Id, stopwatch.ElapsedMilliseconds);
+
+            return result;
+        }
 
         /// <summary>
         /// Получение всех автомобилей
         /// </summary>
         /// <returns>Асинхронная задача с коллекцией автомобилей</returns>
         public Task<IReadOnlyCollection<Car>> GetAllAsync()
-            => carStorage.GetAllAsync();
+        {
+            stopwatch.Restart();
+
+            var result = carStorage.GetAllAsync();
+
+            stopwatch.Stop();
+            logger.LogInformation("Получения всех машин в прокате: {1} мс", stopwatch.ElapsedMilliseconds);
+
+            return result;
+        }
 
         /// <summary>
         /// Получение статистики по автомобилям
@@ -88,7 +114,13 @@ namespace CarManagerData
         /// <returns>Асинхронная задача с данными о статистике автомобилей</returns>
         public async Task<ICarStats> GetStatsAsync()
         {
+            stopwatch.Restart();
+
             var result = await carStorage.GetAllAsync();
+
+            stopwatch.Stop();
+            logger.LogInformation("Получение всей статистики: {1} мс", stopwatch.ElapsedMilliseconds);
+
             return new CarStatsModel
             {
                 CountCar = result.Count,
