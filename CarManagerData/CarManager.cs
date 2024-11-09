@@ -32,11 +32,7 @@ namespace CarManagerData
             this.logger = logger;
         }
 
-        /// <summary>
-        /// Добавление нового автомобиля
-        /// </summary>
-        /// <param name="car">Автомобиль для добавления</param>
-        /// <returns>Асинхронная задача с результатом добавленного автомобиля</returns>
+        /// <inheritdoc />
         public async Task<Car> AddAsync(Car car)
         {
             stopwatch.Restart();
@@ -49,11 +45,7 @@ namespace CarManagerData
             return result;
         }
 
-        /// <summary>
-        /// Удаление автомобиля по идентификатору
-        /// </summary>
-        /// <param name="id">Идентификатор автомобиля</param>
-        /// <returns>Асинхронная задача, возвращающая результат операции удаления</returns>
+        /// <inheritdoc />
         public async Task<bool> DeleteAsync(Guid id)
         {
             stopwatch.Restart();
@@ -75,11 +67,7 @@ namespace CarManagerData
         }
 
 
-        /// <summary>
-        /// Редактирование информации об автомобиле
-        /// </summary>
-        /// <param name="car">Автомобиль с обновленными данными</param>
-        /// <returns>Асинхронная задача, обновление информации и машине</returns>
+        /// <inheritdoc />
         public Task EditAsync(Car car)
         {
             stopwatch.Restart();
@@ -92,10 +80,7 @@ namespace CarManagerData
             return result;
         }
 
-        /// <summary>
-        /// Получение всех автомобилей
-        /// </summary>
-        /// <returns>Асинхронная задача с коллекцией автомобилей</returns>
+        /// <inheritdoc />
         public Task<IReadOnlyCollection<Car>> GetAllAsync()
         {
             stopwatch.Restart();
@@ -108,10 +93,7 @@ namespace CarManagerData
             return result;
         }
 
-        /// <summary>
-        /// Получение статистики по автомобилям
-        /// </summary>
-        /// <returns>Асинхронная задача с данными о статистике автомобилей</returns>
+        /// <inheritdoc />
         public async Task<ICarStats> GetStatsAsync()
         {
             stopwatch.Restart();

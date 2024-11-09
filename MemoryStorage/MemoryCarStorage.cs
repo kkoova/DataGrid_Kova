@@ -20,22 +20,14 @@ namespace MemoryStorage
             cars = new List<Car>();
         }
 
-        /// <summary>
-        /// Асинхронное добавление нового автомобиля
-        /// </summary>
-        /// <param name="car">Автомобиль для добавления</param>
-        /// <returns>Добавленный автомобиль</returns>
+        /// <inheritdoc />
         public Task<Car> AddAsync(Car car)
         {
             cars.Add(car);
             return Task.FromResult(car);
         }
 
-        /// <summary>
-        /// Асинхронное удаление автомобиля по его идентификатору
-        /// </summary>
-        /// <param name="id">Идентификатор автомобиля, который нужно удалить</param>
-        /// <returns>Истина, если удаление прошло успешно иначе ложь</returns>
+        /// <inheritdoc />
         public Task<bool> DeleteAsync(Guid id)
         {
             var car = cars.FirstOrDefault(x => x.Id == id);
@@ -47,11 +39,7 @@ namespace MemoryStorage
             return Task.FromResult(false);
         }
 
-        /// <summary>
-        /// Асинхронное редактирование существующего автомобиля
-        /// </summary>
-        /// <param name="car">Автомобиль с обновленными данными</param>
-        /// <returns>Редактируемый автомобиль</returns>
+        /// <inheritdoc />
         public Task EditAsync(Car car)
         {
             var target = cars.FirstOrDefault(x => x.Id == car.Id);
@@ -67,10 +55,7 @@ namespace MemoryStorage
             return Task.CompletedTask;
         }
 
-        /// <summary>
-        /// Асинхронное получение всех автомобилей
-        /// </summary>
-        /// <returns>Список всех автомобилей в виде только для чтения</returns>
+        /// <inheritdoc />
         public Task<IReadOnlyCollection<Car>> GetAllAsync()
             => Task.FromResult<IReadOnlyCollection<Car>>(cars);
     }

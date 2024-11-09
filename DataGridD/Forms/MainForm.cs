@@ -2,6 +2,8 @@ using DataGridD.Forms;
 using CarManagerData;
 using Microsoft.Extensions.Logging;
 using MemoryStorage;
+using Serilog;
+using Serilog.Extensions.Logging;
 
 namespace DataGridD
 {
@@ -22,8 +24,13 @@ namespace DataGridD
         /// </summary>
         private void ViewAllCarsBtn_Click(object sender, EventArgs e)
         {
-            var factory = LoggerFactory.Create(bilder => bilder.AddDebug());
-            var logger = factory.CreateLogger(typeof(MainForm));
+            var seriloglogger = new LoggerConfiguration()
+            .MinimumLevel.Verbose()
+            .WriteTo.Seq("", apiKey: "") //seq
+            .CreateLogger();
+
+            var logger = new SerilogLoggerFactory(seriloglogger)
+                .CreateLogger("DataGridD");
 
             var storage = new MemoryCarStorage();
             var manager = new CarManager(storage, logger);
