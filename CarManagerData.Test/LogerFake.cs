@@ -15,7 +15,7 @@ namespace CarManagerData.Test
         }
         public IDisposable BeginScope<TState>(TState state)
         {
-            return this;
+            return (IDisposable)this;
         }
         bool ILogger.IsEnabled(LogLevel logLevel)
         {
