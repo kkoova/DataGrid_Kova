@@ -32,7 +32,7 @@ namespace DataGridD
             var logger = new SerilogLoggerFactory(seriloglogger)
                 .CreateLogger("DataGridD");
 
-            var storage = new MemoryCarStorage();
+            var storage = new DataBaseCarStorage();
             var manager = new CarManager(storage, logger);
 
             var viewCarForm = new DataGridCarView(manager);

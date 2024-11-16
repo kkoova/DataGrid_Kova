@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemotyStorage.Test", "Memot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarManagerData.Test", "CarManagerData.Test\CarManagerData.Test.csproj", "{CF915392-D8BC-4B2A-B326-BC92DF93F8AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryStorage.Entiti", "MemoryStorage.Entiti\MemoryStorage.Entiti.csproj", "{5549B390-4A81-45ED-A6CF-4B83274BF683}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGrid.DataStorage", "DataGrid.DataStorage\DataGrid.DataStorage.csproj", "{0869217E-E91F-442B-A141-4FAC36118762}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,10 +49,10 @@ Global
 		{CF915392-D8BC-4B2A-B326-BC92DF93F8AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF915392-D8BC-4B2A-B326-BC92DF93F8AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF915392-D8BC-4B2A-B326-BC92DF93F8AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5549B390-4A81-45ED-A6CF-4B83274BF683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5549B390-4A81-45ED-A6CF-4B83274BF683}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5549B390-4A81-45ED-A6CF-4B83274BF683}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5549B390-4A81-45ED-A6CF-4B83274BF683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0869217E-E91F-442B-A141-4FAC36118762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0869217E-E91F-442B-A141-4FAC36118762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0869217E-E91F-442B-A141-4FAC36118762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0869217E-E91F-442B-A141-4FAC36118762}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

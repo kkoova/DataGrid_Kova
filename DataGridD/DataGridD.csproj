@@ -23,6 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CarManagerData\CarManagerData.csproj" />
     <ProjectReference Include="..\Contracts\Contracts.csproj" />
+    <ProjectReference Include="..\MemoryStorage.Entiti\MemoryStorage.Entiti.csproj" />
   </ItemGroup>
 
   <ItemGroup>
