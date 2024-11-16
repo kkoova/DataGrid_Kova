@@ -1,4 +1,7 @@
-﻿namespace DataGridD.Forms
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace DataGridD.Forms
 {
     partial class DataGridCarView
     {

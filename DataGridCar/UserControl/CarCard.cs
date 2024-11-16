@@ -1,4 +1,7 @@
-﻿using Contracts.Models;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+using Contracts.Models;
 
 namespace DataGridD
 {
@@ -10,12 +13,12 @@ namespace DataGridD
         /// <summary>
         /// Событие, возникающее при нажатии кнопки редактирования
         /// </summary>
-        public event EventHandler? EditButtonClicked = null;
+        public event EventHandler EditButtonClicked = null;
 
         /// <summary>
         /// Событие, возникающее при нажатии кнопки удаления
         /// </summary>
-        public event EventHandler? DeleteButtonClicked = null;
+        public event EventHandler DeleteButtonClicked = null;
 
         /// <summary>
         /// Инициализирует новый экземпляр <see cref="CarCard"/> и настраивает события кнопок
@@ -65,13 +68,17 @@ namespace DataGridD
                 }
             }
 
-            return brand switch
+            switch (brand)
             {
-                Brand.HyundaiCross => Properties.Resources.HyundaiCrossImage,
-                Brand.Ladavesta => Properties.Resources.LadavestaImage,
-                Brand.MitsubishiOutlander => Properties.Resources.MitsubishiOutlanderImage,
-                _ => Properties.Resources.car_1,
-            };
+                case Brand.HyundaiCross:
+                    return global::DataGridCar.Properties.Resources.HyundaiCrossImage;
+                case Brand.Ladavesta:
+                    return global::DataGridCar.Properties.Resources.LadavestaImage;
+                case Brand.MitsubishiOutlander:
+                    return global::DataGridCar.Properties.Resources.MitsubishiOutlanderImage;
+                default:
+                    return global::DataGridCar.Properties.Resources.car_1;
+            }
         }
 
         /// <summary>
@@ -81,7 +88,7 @@ namespace DataGridD
         {
             string[] colors = { "#dfe5f6", "#dbeaff", "#ffdbea" };
 
-            Random random = new();
+            Random random = new Random();
 
             var randomIndex = random.Next(colors.Length);
 

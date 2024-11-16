@@ -7,8 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Contracts.csproj", "{0D70794C-D9D8-429E-A7A4-F85E8FA1FEE6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataGridD", "DataGridD\DataGridD.csproj", "{AB1BAFF2-0202-4A94-B1B5-958D3AEDC047}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarManagerData", "CarManagerData\CarManagerData.csproj", "{70EC01E2-057B-48E0-8164-14C45C29687D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemoryStorage", "MemoryStorage\MemoryStorage.csproj", "{780BD98A-7907-4A7B-A1C0-C1AFEE4D83B4}"
@@ -31,10 +29,6 @@ Global
 		{0D70794C-D9D8-429E-A7A4-F85E8FA1FEE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D70794C-D9D8-429E-A7A4-F85E8FA1FEE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D70794C-D9D8-429E-A7A4-F85E8FA1FEE6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AB1BAFF2-0202-4A94-B1B5-958D3AEDC047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB1BAFF2-0202-4A94-B1B5-958D3AEDC047}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AB1BAFF2-0202-4A94-B1B5-958D3AEDC047}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB1BAFF2-0202-4A94-B1B5-958D3AEDC047}.Release|Any CPU.Build.0 = Release|Any CPU
 		{70EC01E2-057B-48E0-8164-14C45C29687D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{70EC01E2-057B-48E0-8164-14C45C29687D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70EC01E2-057B-48E0-8164-14C45C29687D}.Release|Any CPU.ActiveCfg = Release|Any CPU
