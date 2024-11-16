@@ -10,6 +10,10 @@ namespace DataGrid.DataStorage
 {
     public class DataGridContext : DbContext
     {
+        public DataGridContext() : base("DBConnectionString")
+        {
+
+        }
         public DbSet<Car> Cars { get; set; }
     }
 }

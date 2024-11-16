@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarManagerData.Test", "CarM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGrid.DataStorage", "DataGrid.DataStorage\DataGrid.DataStorage.csproj", "{0869217E-E91F-442B-A141-4FAC36118762}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridCar", "DataGridCar\DataGridCar.csproj", "{E53671B7-2102-4C76-92ED-52A739257A4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{0869217E-E91F-442B-A141-4FAC36118762}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0869217E-E91F-442B-A141-4FAC36118762}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0869217E-E91F-442B-A141-4FAC36118762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E53671B7-2102-4C76-92ED-52A739257A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E53671B7-2102-4C76-92ED-52A739257A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E53671B7-2102-4C76-92ED-52A739257A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E53671B7-2102-4C76-92ED-52A739257A4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

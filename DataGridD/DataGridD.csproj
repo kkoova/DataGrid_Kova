@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="BindingLibraryKova" Version="1.0.0" />
+    <PackageReference Include="EntityFramework" Version="6.5.1" />
     <PackageReference Include="MemoryStorage" Version="1.0.1" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
@@ -23,7 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CarManagerData\CarManagerData.csproj" />
     <ProjectReference Include="..\Contracts\Contracts.csproj" />
-    <ProjectReference Include="..\MemoryStorage.Entiti\MemoryStorage.Entiti.csproj" />
+    <ProjectReference Include="..\DataGrid.DataStorage\DataGrid.DataStorage.csproj" />
   </ItemGroup>
 
   <ItemGroup>
