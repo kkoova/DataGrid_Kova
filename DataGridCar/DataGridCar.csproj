@@ -178,9 +178,9 @@
       <Project>{0d70794c-d9d8-429e-a7a4-f85e8fa1fee6}</Project>
       <Name>Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataGrid.DataStorage\DataGrid.DataStorage.csproj">
-      <Project>{0869217e-e91f-442b-a141-4fac36118762}</Project>
-      <Name>DataGrid.DataStorage</Name>
+    <ProjectReference Include="..\DataGrid.DataStorage.Entity\DataGrid.DataStorage.Entity.csproj">
+      <Project>{f41af02c-2b8e-4f82-a09b-f5d96ecc8f65}</Project>
+      <Name>DataGrid.DataStorage.Entity</Name>
     </ProjectReference>
     <ProjectReference Include="..\MemoryStorage\MemoryStorage.csproj">
       <Project>{780bd98a-7907-4a7b-a1c0-c1afee4d83b4}</Project>

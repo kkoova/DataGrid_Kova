@@ -1,14 +1,19 @@
+using System;
+using System.Windows.Forms;
+
 namespace DataGridD
 {
     static internal class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
+        /// Главная точка входа для приложения.
         /// </summary>
-        private static void Main()
+        [STAThread]
+        static void Main()
         {
-            var mainForm = new MainForm();
-            mainForm.Show();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
         }
     }
 }

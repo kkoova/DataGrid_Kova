@@ -1,4 +1,5 @@
-﻿using Contracts.Models;
+﻿using System;
+using Contracts.Models;
 
 namespace DataGridD.Logic
 {
@@ -12,7 +13,7 @@ namespace DataGridD.Logic
         /// </summary>
         /// <param name="sett">Функция настройки свойств автомобиля</param>
         /// <returns>Созданный экземпляр автомобиля</returns>
-        public static Car Create(Action<Car>? sett = null)
+        public static Car Create(Action<Car> sett = null)
         {
             var result = new Car
             {

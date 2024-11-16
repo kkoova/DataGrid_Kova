@@ -42,31 +42,33 @@ namespace DataGridD
             this.ViewAllCarsBtn.BackColor = System.Drawing.Color.Transparent;
             this.ViewAllCarsBtn.BackgroundImage = global::DataGridCar.Properties.Resources.goBtn;
             this.ViewAllCarsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ViewAllCarsBtn.Location = new System.Drawing.Point(253, 368);
+            this.ViewAllCarsBtn.Location = new System.Drawing.Point(280, 426);
             this.ViewAllCarsBtn.Name = "ViewAllCarsBtn";
-            this.ViewAllCarsBtn.Size = new System.Drawing.Size(512, 123);
+            this.ViewAllCarsBtn.Size = new System.Drawing.Size(597, 123);
             this.ViewAllCarsBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ViewAllCarsBtn.TabIndex = 0;
             this.ViewAllCarsBtn.TabStop = false;
+            this.ViewAllCarsBtn.Click += new System.EventHandler(this.ViewAllCarsBtn_Click);
             // 
             // ExitBtn
             // 
             this.ExitBtn.BackColor = System.Drawing.Color.Transparent;
             this.ExitBtn.BackgroundImage = global::DataGridCar.Properties.Resources.Group_2;
             this.ExitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExitBtn.Location = new System.Drawing.Point(897, 10);
+            this.ExitBtn.Location = new System.Drawing.Point(1062, 12);
             this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Size = new System.Drawing.Size(86, 43);
+            this.ExitBtn.Size = new System.Drawing.Size(72, 55);
             this.ExitBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ExitBtn.TabIndex = 1;
             this.ExitBtn.TabStop = false;
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click_1);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::DataGridCar.Properties.Resources.Frame_1;
-            this.ClientSize = new System.Drawing.Size(993, 790);
+            this.ClientSize = new System.Drawing.Size(1155, 871);
             this.ControlBox = false;
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.ViewAllCarsBtn);

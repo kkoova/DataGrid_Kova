@@ -1,4 +1,7 @@
-﻿namespace DataGridD
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace DataGridD
 {
     partial class CarCard
     {
@@ -71,7 +74,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.fuel_pump;
+            pictureBox3.Image = global::DataGridCar.Properties.Resources.fuel_pump;
             pictureBox3.Location = new Point(23, 201);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(17, 15);
@@ -81,7 +84,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.key;
+            pictureBox2.Image = global::DataGridCar.Properties.Resources.key;
             pictureBox2.Location = new Point(113, 201);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(17, 15);
@@ -91,7 +94,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.oil;
+            pictureBox1.Image = global::DataGridCar.Properties.Resources.oil;
             pictureBox1.Location = new Point(201, 201);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(17, 15);
@@ -128,7 +131,7 @@
             // editButton
             // 
             editButton.BackColor = Color.Transparent;
-            editButton.BackgroundImage = Properties.Resources.Edit;
+            editButton.BackgroundImage = global::DataGridCar.Properties.Resources.Edit;
             editButton.BackgroundImageLayout = ImageLayout.Stretch;
             editButton.FlatAppearance.BorderSize = 0;
             editButton.FlatStyle = FlatStyle.Popup;
@@ -198,7 +201,7 @@
             // dellbtn
             // 
             dellbtn.BackColor = Color.Transparent;
-            dellbtn.BackgroundImage = Properties.Resources.Delit;
+            dellbtn.BackgroundImage = global::DataGridCar.Properties.Resources.Delit;
             dellbtn.BackgroundImageLayout = ImageLayout.Stretch;
             dellbtn.FlatAppearance.BorderSize = 0;
             dellbtn.FlatStyle = FlatStyle.Popup;
