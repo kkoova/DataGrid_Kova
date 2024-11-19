@@ -1,14 +1,15 @@
 ﻿
 using System;
 using System.Threading.Tasks;
-using Contracts;
-using Contracts.Models;
+using DataGridCar.CarManagerData;
+using DataGridCar.Contracts;
+using DataGridCar.Contracts.Models;
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using Moq;
 using Xunit;
 
-namespace CarManagerData.Test
+namespace DataGridCar.CarManagerData.Test
 {
     public class CarManagerTest
     {

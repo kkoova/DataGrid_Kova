@@ -5,9 +5,9 @@ using Serilog;
 using Serilog.Extensions.Logging;
 using System.Windows.Forms;
 using System;
-using DataGrid.DataStorage.Entity;
+using DataGridCar.DataStorage.Entity;
 
-namespace DataGridD
+namespace DataGridCar
 {
     public partial class MainForm : Form
     {
@@ -28,7 +28,7 @@ namespace DataGridD
         {
             var seriloglogger = new LoggerConfiguration()
             .MinimumLevel.Verbose()
-            .WriteTo.Seq("", apiKey: "") //seq
+            .WriteTo.Seq("http://localhost:5341/", apiKey: "9yhGAscQDNIfQNmlZJuf")
             .CreateLogger();
 
             var logger = new SerilogLoggerFactory(seriloglogger)

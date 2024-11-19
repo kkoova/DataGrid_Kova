@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using DataGridCar.Contracts;
+using DataGridCar.Contracts.Models;
 using System.Threading.Tasks;
-using Contracts;
-using Contracts.Models;
+using System.Collections.Generic;
 
-namespace MemoryStorage
+namespace DataGridCar.MemoryStorage
 {
     public class MemoryCarStorage : ICarStorage
     {

@@ -1,9 +1,9 @@
-﻿using Contracts.Models;
+﻿using DataGridCar.Contracts.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Contracts
+namespace DataGridCar.Contracts
 {
     /// <summary>
     /// Интерфейс <see cref="ICarStorage"/> определяет контракт для хранения

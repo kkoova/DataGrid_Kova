@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using CarManagerData.Models;
-using Contracts;
-using Contracts.Models;
+using DataGridCar.CarManagerData.Models;
+using DataGridCar.Contracts;
+using DataGridCar.Contracts.Models;
 using Microsoft.Extensions.Logging;
 
-namespace CarManagerData
+namespace DataGridCar.CarManagerData
 {
     /// <summary>
     /// Класс <see cref="CarManager"/> реализует интерфейс <see cref="ICarManager"/> 

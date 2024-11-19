@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Contracts.Models
+namespace DataGridCar.Contracts.Models
 {
     /// <summary>
     /// Машина

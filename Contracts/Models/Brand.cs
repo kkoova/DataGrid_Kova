@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Contracts.Models
+namespace DataGridCar.Contracts.Models
 {
     /// <summary>
     /// Марка машины

@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace DataGridD
+namespace DataGridCar
 {
     static internal class Program
     {
@@ -9,7 +9,7 @@ namespace DataGridD
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

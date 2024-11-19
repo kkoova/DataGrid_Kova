@@ -5,21 +5,19 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3A7ECA5E-C4A8-42C2-BBAD-DF2010F0CA01}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Contracts.csproj", "{0D70794C-D9D8-429E-A7A4-F85E8FA1FEE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataGridCar.Contracts", "Contracts\DataGridCar.Contracts.csproj", "{0D70794C-D9D8-429E-A7A4-F85E8FA1FEE6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarManagerData", "CarManagerData\CarManagerData.csproj", "{70EC01E2-057B-48E0-8164-14C45C29687D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataGridCar.CarManagerData", "CarManagerData\DataGridCar.CarManagerData.csproj", "{70EC01E2-057B-48E0-8164-14C45C29687D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemoryStorage", "MemoryStorage\MemoryStorage.csproj", "{780BD98A-7907-4A7B-A1C0-C1AFEE4D83B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaraGridCar.MemoryStorage", "MemoryStorage\DaraGridCar.MemoryStorage.csproj", "{780BD98A-7907-4A7B-A1C0-C1AFEE4D83B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemotyStorage.Test", "MemotyStorage.Test\MemotyStorage.Test.csproj", "{7D156FB4-5F8E-4116-97EC-9DCA4F2B0C8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridCar.MemotyStorage.Test", "MemotyStorage.Test\DataGridCar.MemotyStorage.Test.csproj", "{7D156FB4-5F8E-4116-97EC-9DCA4F2B0C8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarManagerData.Test", "CarManagerData.Test\CarManagerData.Test.csproj", "{CF915392-D8BC-4B2A-B326-BC92DF93F8AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridCar.CarManagerData.Test", "CarManagerData.Test\DataGridCar.CarManagerData.Test.csproj", "{CF915392-D8BC-4B2A-B326-BC92DF93F8AE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridCar", "DataGridCar\DataGridCar.csproj", "{E53671B7-2102-4C76-92ED-52A739257A4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGrid.DataStorage.Entity", "DataGrid.DataStorage.Entity\DataGrid.DataStorage.Entity.csproj", "{F41AF02C-2B8E-4F82-A09B-F5D96ECC8F65}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{678F96BA-D179-4F84-A057-47871235D707}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridCar.DataStorage.Entity", "DataGrid.DataStorage.Entity\DataGridCar.DataStorage.Entity.csproj", "{F41AF02C-2B8E-4F82-A09B-F5D96ECC8F65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,10 +53,6 @@ Global
 		{F41AF02C-2B8E-4F82-A09B-F5D96ECC8F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F41AF02C-2B8E-4F82-A09B-F5D96ECC8F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F41AF02C-2B8E-4F82-A09B-F5D96ECC8F65}.Release|Any CPU.Build.0 = Release|Any CPU
-		{678F96BA-D179-4F84-A057-47871235D707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{678F96BA-D179-4F84-A057-47871235D707}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{678F96BA-D179-4F84-A057-47871235D707}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{678F96BA-D179-4F84-A057-47871235D707}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

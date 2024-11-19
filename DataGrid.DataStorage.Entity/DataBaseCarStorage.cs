@@ -2,16 +2,21 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Contracts;
 using Contracts.Models;
 
-namespace DataGrid.DataStorage.Entity
+namespace DataGridCar.DataStorage.Entity
 {
+    /// <summary>
+    /// Работа с контекстом базы данных
+    /// </summary>
     public class DataBaseCarStorage : ICarStorage
     {
+        /// <summary>
+        /// Добавление машины в базу данных
+        /// </summary>
         public async Task<Car> AddAsync(Car car)
         {
             using (var context = new DataGridContext())
@@ -25,6 +30,9 @@ namespace DataGrid.DataStorage.Entity
             return car;
         }
 
+        /// <summary>
+        /// Удаление машины из базы данных
+        /// </summary>
         public async Task<bool> DeleteAsync(Guid id)
         {
             using (var context = new DataGridContext())
@@ -41,6 +49,9 @@ namespace DataGrid.DataStorage.Entity
             return false;
         }
 
+        /// <summary>
+        /// Редактирование машины в базе данных
+        /// </summary>
         public async Task EditAsync(Car car)
         {
             using (var context = new DataGridContext())
@@ -59,6 +70,9 @@ namespace DataGrid.DataStorage.Entity
             }
         }
 
+        /// <summary>
+        /// Получение информации из базы данных
+        /// </summary>
         public async Task<IReadOnlyCollection<Car>> GetAllAsync()
         {
             using (var context = new DataGridContext())

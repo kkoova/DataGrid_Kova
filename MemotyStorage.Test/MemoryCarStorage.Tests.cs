@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Contracts;
-using Contracts.Models;
+using DataGridCar.Contracts;
+using DataGridCar.Contracts.Models;
 using FluentAssertions;
-using MemoryStorage;
+using DataGridCar.MemoryStorage;
 using Xunit;
 
-namespace MemotyStorage.Test
+namespace DataGridCar.MemotyStorage.Test
 {
     /// <summary>
     /// Тест для <see cref="MemoryCarStorage"/>
@@ -72,7 +72,7 @@ namespace MemotyStorage.Test
             result.Should().NotBeNull()
                 .And.BeEquivalentTo(new
                 {
-                    Id = model.Id,
+                    model.Id,
                     Brend = model.Carbrand,
                 });
         }

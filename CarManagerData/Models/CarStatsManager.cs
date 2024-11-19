@@ -1,6 +1,6 @@
-﻿using Contracts;
+﻿using DataGridCar.Contracts;
 
-namespace CarManagerData.Models
+namespace DataGridCar.CarManagerData.Models
 {
     /// <summary>
     /// Статистика по автомобилям

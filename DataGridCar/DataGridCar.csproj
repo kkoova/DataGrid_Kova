@@ -36,11 +36,23 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.9.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.9.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Diagnostics.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Diagnostics.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Diagnostics.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Hosting.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Logging, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Logging.9.0.0\lib\net462\Microsoft.Extensions.Logging.dll</HintPath>
@@ -56,6 +68,9 @@
     </Reference>
     <Reference Include="Serilog, Version=4.1.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.4.1.0\lib\net471\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Extensions.Hosting, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Extensions.Hosting.8.0.0\lib\net462\Serilog.Extensions.Hosting.dll</HintPath>
     </Reference>
     <Reference Include="Serilog.Extensions.Logging, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.Extensions.Logging.8.0.0\lib\net462\Serilog.Extensions.Logging.dll</HintPath>
@@ -170,21 +185,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CarManagerData\CarManagerData.csproj">
+    <ProjectReference Include="..\CarManagerData\DataGridCar.CarManagerData.csproj">
       <Project>{70ec01e2-057b-48e0-8164-14c45c29687d}</Project>
-      <Name>CarManagerData</Name>
+      <Name>DataGridCar.CarManagerData</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Contracts\Contracts.csproj">
+    <ProjectReference Include="..\Contracts\DataGridCar.Contracts.csproj">
       <Project>{0d70794c-d9d8-429e-a7a4-f85e8fa1fee6}</Project>
-      <Name>Contracts</Name>
+      <Name>DataGridCar.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataGrid.DataStorage.Entity\DataGrid.DataStorage.Entity.csproj">
+    <ProjectReference Include="..\DataGrid.DataStorage.Entity\DataGridCar.DataStorage.Entity.csproj">
       <Project>{f41af02c-2b8e-4f82-a09b-f5d96ecc8f65}</Project>
-      <Name>DataGrid.DataStorage.Entity</Name>
+      <Name>DataGridCar.DataStorage.Entity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MemoryStorage\MemoryStorage.csproj">
+    <ProjectReference Include="..\MemoryStorage\DaraGridCar.MemoryStorage.csproj">
       <Project>{780bd98a-7907-4a7b-a1c0-c1afee4d83b4}</Project>
-      <Name>MemoryStorage</Name>
+      <Name>DaraGridCar.MemoryStorage</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

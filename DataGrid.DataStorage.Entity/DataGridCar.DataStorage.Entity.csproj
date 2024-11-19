@@ -56,9 +56,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Contracts\Contracts.csproj">
+    <ProjectReference Include="..\Contracts\DataGridCar.Contracts.csproj">
       <Project>{0D70794C-D9D8-429E-A7A4-F85E8FA1FEE6}</Project>
-      <Name>Contracts</Name>
+      <Name>DataGridCar.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

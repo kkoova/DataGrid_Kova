@@ -1,14 +1,22 @@
 ﻿using System.Data.Entity;
 using Contracts.Models;
 
-namespace DataGrid.DataStorage.Entity
+namespace DataGridCar.DataStorage.Entity
 {
+    /// <summary>
+    /// Контекст базы данных
+    /// </summary>
     public class DataGridContext : DbContext
     {
-        public DataGridContext() : base("DBConnectionString")
-        {
+        /// <summary>
+        /// Конструктор контекста базы данных
+        /// </summary>
+        public DataGridContext() : base("CarDataGridDB")
+        { }
 
-        }
+        /// <summary>
+        /// Таблица <see cref="Cars"/> в базе данных
+        /// </summary>
         public DbSet<Car> Cars { get; set; }
     }
 }

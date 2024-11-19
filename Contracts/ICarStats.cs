@@ -1,4 +1,4 @@
-﻿namespace Contracts
+﻿namespace DataGridCar.Contracts
 {
     /// <summary>
     /// Интерфейс <see cref="ICarStats"/> определяет контракт для представления 
