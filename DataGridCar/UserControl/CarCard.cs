@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Contracts.Models;
+using DataGridCar.Contracts.Models;
 
 namespace DataGridD
 {
@@ -88,7 +88,7 @@ namespace DataGridD
         {
             string[] colors = { "#dfe5f6", "#dbeaff", "#ffdbea" };
 
-            Random random = new Random();
+            var random = new Random();
 
             var randomIndex = random.Next(colors.Length);
 

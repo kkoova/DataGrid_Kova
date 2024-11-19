@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +36,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -185,19 +194,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CarManagerData\DataGridCar.CarManagerData.csproj">
+    <ProjectReference Include="..\DataGridCar.CarManagerData\DataGridCar.CarManagerData.csproj">
       <Project>{70ec01e2-057b-48e0-8164-14c45c29687d}</Project>
       <Name>DataGridCar.CarManagerData</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Contracts\DataGridCar.Contracts.csproj">
+    <ProjectReference Include="..\DataGridCar.Contracts\DataGridCar.Contracts.csproj">
       <Project>{0d70794c-d9d8-429e-a7a4-f85e8fa1fee6}</Project>
       <Name>DataGridCar.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataGrid.DataStorage.Entity\DataGridCar.DataStorage.Entity.csproj">
-      <Project>{f41af02c-2b8e-4f82-a09b-f5d96ecc8f65}</Project>
+    <ProjectReference Include="..\DataGridCar.DataStorage.Entity\DataGridCar.DataStorage.Entity.csproj">
+      <Project>{10944197-bfcb-4ec8-86c1-d0cc2b5348eb}</Project>
       <Name>DataGridCar.DataStorage.Entity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MemoryStorage\DaraGridCar.MemoryStorage.csproj">
+    <ProjectReference Include="..\DataGridCar.MemoryStorage\DaraGridCar.MemoryStorage.csproj">
       <Project>{780bd98a-7907-4a7b-a1c0-c1afee4d83b4}</Project>
       <Name>DaraGridCar.MemoryStorage</Name>
     </ProjectReference>
@@ -222,4 +231,12 @@
     <Content Include="Resources\oil.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
 </Project>

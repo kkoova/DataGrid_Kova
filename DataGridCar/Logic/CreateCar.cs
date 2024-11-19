@@ -1,5 +1,5 @@
 ﻿using System;
-using Contracts.Models;
+using DataGridCar.Contracts.Models;
 
 namespace DataGridD.Logic
 {

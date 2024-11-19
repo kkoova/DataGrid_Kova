@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Contracts;
+using DataGridCar.Contracts;
 
 namespace DataGridD.Forms
 {
@@ -18,8 +18,13 @@ namespace DataGridD.Forms
             this.carManager = carManager;
 
             InitializeComponent();
+            UpdateData();
         }
 
+        private async void UpdateData()
+        {
+            await LoadCarCardsAsync();
+        }
         /// <summary>
         /// Обработчик события клика по кнопке добавления автомобиля
         /// Открывает форму добавления нового автомобиля и обновляет список автомобилей
