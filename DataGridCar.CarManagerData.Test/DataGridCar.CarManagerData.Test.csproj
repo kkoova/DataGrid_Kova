@@ -130,7 +130,7 @@
       <Name>DataGridCar.CarManagerData</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataGridCar.Contracts\DataGridCar.Contracts.csproj">
-      <Project>{0D70794C-D9D8-429E-A7A4-F85E8FA1FEE6}</Project>
+      <Project>{0d70794c-d9d8-429e-a7a4-f85e8fa1fee6}</Project>
       <Name>DataGridCar.Contracts</Name>
     </ProjectReference>
   </ItemGroup>

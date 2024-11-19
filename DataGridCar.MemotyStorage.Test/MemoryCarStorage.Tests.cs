@@ -15,6 +15,9 @@ namespace DataGridCar.MemotyStorage.Test
     {
         public readonly ICarStorage carStorage;
 
+        /// <summary>
+        /// Конструтор 
+        /// </summary>
         public MemoryCarStorageTest()
         {
             carStorage = new MemoryCarStorage();
