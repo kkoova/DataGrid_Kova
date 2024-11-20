@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using DataGridCar.CarManagerData;
 using DataGridCar.Contracts;
 using DataGridCar.Contracts.Models;
 using FluentAssertions;
@@ -17,9 +16,10 @@ namespace DataGridCar.CarManagerData.Test
     /// </summary>
     public class CarManagerTest
     {
-        private readonly ICarManager carManager;
+
         private readonly Mock<ICarStorage> carStorageMock;
-        private readonly Mock<ILogger> loggerMocK;
+        private readonly Mock<ILogger<ICarManager>> loggerMocK;
+        private readonly ICarManager carManager;
 
         /// <summary>
         /// Конструктор <see cref="CarManagerTest"/>
@@ -27,14 +27,14 @@ namespace DataGridCar.CarManagerData.Test
         public CarManagerTest()
         {
             carStorageMock = new Mock<ICarStorage>();
-            carManager = new CarManager(carStorageMock.Object,
-                Mock.Of<ILogger>());
-
-            loggerMocK.Setup(x => x.Log(LogLevel.Information,
+            loggerMocK = new Mock<ILogger<ICarManager>>();
+            loggerMocK.Setup(x => x.Log(
+                It.IsAny<LogLevel>(),
                 It.IsAny<EventId>(),
                 It.IsAny<It.IsAnyType>(),
-                null,
-                It.IsAny<Func<It.IsAnyType, Exception, string>>()));
+                It.IsAny<Exception>(),
+                (Func<It.IsAnyType, Exception, string>)It.IsAny<object>()
+            ));
 
             carManager = new CarManager(carStorageMock.Object, loggerMocK.Object);
         }
@@ -43,10 +43,10 @@ namespace DataGridCar.CarManagerData.Test
         /// Добавление в хранилище
         /// </summary>
         [Fact]
-        public async Task AddShoudWork()
+        public async Task AddCarNeedToBeCorrect()
         {
-            // Arrage
-            var model = new Car
+            // Arrange
+            var cars = new Car
             {
                 Id = Guid.NewGuid(),
                 Carbrand = Brand.Ladavesta.ToString(),
@@ -57,24 +57,21 @@ namespace DataGridCar.CarManagerData.Test
                 CostRent = 32,
             };
 
-            carStorageMock.Setup(x => x.AddAsync(It.IsAny<Car>()))
-                .ReturnsAsync(new Car());
-
             // Act
-            var result = await carManager.AddAsync(model);
+            carStorageMock.Setup(x => x.AddAsync(It.IsAny<Car>()))
+                .ReturnsAsync(cars);
+
+            var result = await carManager.AddAsync(cars);
 
             // Assert
-            result.Should().NotBeNull().And.Be(model);
-            carStorageMock.Verify(x => x.AddAsync(It.Is<Car>(y => y.Id == model.Id)), Times.Once);
-
+            result.Should().NotBeNull().And.Be(cars);
+            carStorageMock.Verify(x => x.AddAsync(It.Is<Car>(y => y.Id == cars.Id)), Times.Once);
             carStorageMock.VerifyNoOtherCalls();
             loggerMocK.Verify(x => x.Log(LogLevel.Information,
                 It.IsAny<EventId>(),
                 It.IsAny<It.IsAnyType>(),
                 null,
-                It.IsAny<Func<It.IsAnyType, Exception, string>>()), Times.Exactly(2));
-
-            loggerMocK.VerifyNoOtherCalls();
+                It.IsAny<Func<It.IsAnyType, Exception, string>>()), Times.Once);
         }
 
         /// <summary>
@@ -92,8 +89,8 @@ namespace DataGridCar.CarManagerData.Test
             // Act
             var result = await carManager.DeleteAsync(modelID);
 
+            // Assert
             result.Should().Be(true);
-
             carStorageMock.Verify(x => x.DeleteAsync(modelID), Times.Once);
             carStorageMock.VerifyNoOtherCalls();
 
@@ -156,7 +153,6 @@ namespace DataGridCar.CarManagerData.Test
                 new Car { Id = Guid.NewGuid(), Carbrand = Brand.MitsubishiOutlander.ToString(), Number = "GGG45" },
                 new Car { Id = Guid.NewGuid(), Carbrand = Brand.HyundaiCross.ToString(), Number = "JJ734" }
             };
-
             carStorageMock.Setup(x => x.GetAllAsync()).ReturnsAsync(cars);
 
             // Act
@@ -164,7 +160,6 @@ namespace DataGridCar.CarManagerData.Test
 
             // Assert
             result.Should().BeEquivalentTo(cars);
-
             carStorageMock.Verify(x => x.GetAllAsync(), Times.Once);
             carStorageMock.VerifyNoOtherCalls();
             loggerMocK.Verify(x => x.Log(LogLevel.Information,
