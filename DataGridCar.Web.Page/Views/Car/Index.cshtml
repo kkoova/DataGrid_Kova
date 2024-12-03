@@ -12,8 +12,47 @@
 
 <br>
 
-<div class="btn-group" role="group" aria-label="Basic example">
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="mdo">Добавить машину</button>
+<div>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCarModal">Добавить машину</button>
+</div>
+
+<div class="modal fade" id="addCarModal" tabindex="-1" role="dialog" aria-labelledby="addCarModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="addCarModalLabel">Добавить машину</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<!-- Форма добавления машины -->
+				<form id="addCarForm">
+					<div class="form-group">
+						<label for="carBrand">Марка машины</label>
+						<input type="text" class="form-control" id="carBrand" name="Carbrand" required>
+					</div>
+					<div class="form-group">
+						<label for="carNumber">Номер машины</label>
+						<input type="text" class="form-control" id="carNumber" name="Number" required>
+					</div>
+					<div class="form-group">
+						<label for="carMileage">Пробег</label>
+						<input type="number" class="form-control" id="carMileage" name="Mileage" required>
+					</div>
+					<div class="form-group">
+						<label for="carFuelVolume">Объем топлива</label>
+						<input type="number" class="form-control" id="carFuelVolume" name="FuelVolume" required>
+					</div>
+					<div class="form-group">
+						<label for="carCostRent">Стоимость аренды</label>
+						<input type="number" class="form-control" id="carCostRent" name="CostRent" required>
+					</div>
+					<button type="submit" class="btn btn-primary">Сохранить</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 
 <table class="table">

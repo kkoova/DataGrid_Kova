@@ -1,8 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
+п»їusing System.Diagnostics;
 using DataGridCar.Contracts;
 using DataGridCar.Contracts.Models;
+using DataGridCar.Web.Models;
+using Microsoft.AspNetCore.Mvc;
 
-namespace DataGridCar.Web.Page
+namespace DataGridCar.Web.Controllers
 {
     public class CarController : Controller
     {
@@ -14,7 +16,7 @@ namespace DataGridCar.Web.Page
         }
 
         /// <summary>
-        /// Отображает список всех машин.
+        /// РћС‚РѕР±СЂР°Р¶Р°РµС‚ СЃРїРёСЃРѕРє РІСЃРµС… РїСЂРѕРґСѓРєС‚РѕРІ.
         /// </summary>
         public async Task<IActionResult> Index()
         {
@@ -26,16 +28,23 @@ namespace DataGridCar.Web.Page
             return View(cars.Result);
         }
 
+        /// <summary>
+        /// РћС‚РѕР±СЂР°Р¶Р°РµС‚ СЃС‚СЂР°РЅРёС†Сѓ СЃРѕР·РґР°РЅРёСЏ РЅРѕРІРѕРіРѕ РїСЂРѕРґСѓРєС‚Р°.
+        /// </summary>
+        public IActionResult Create()
+        {
+            return View();
+        }
 
         /// <summary>
-        /// Обрабатывает создание нового продукта.
+        /// РћР±СЂР°Р±Р°С‚С‹РІР°РµС‚ СЃРѕР·РґР°РЅРёРµ РЅРѕРІРѕРіРѕ РїСЂРѕРґСѓРєС‚Р°.
         /// </summary>
         [HttpPost]
-        public async Task<IActionResult> Add(Car car)
+        public async Task<IActionResult> Create(Car car)
         {
             if (!ModelState.IsValid)
             {
-                return PartialView("_AddCarForm", car);
+                return View();
             }
 
             car.Id = Guid.NewGuid();
@@ -44,7 +53,7 @@ namespace DataGridCar.Web.Page
         }
 
         /// <summary>
-        /// Отображает страницу редактирования продукта по его идентификатору.
+        /// РћС‚РѕР±СЂР°Р¶Р°РµС‚ СЃС‚СЂР°РЅРёС†Сѓ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ РїСЂРѕРґСѓРєС‚Р° РїРѕ РµРіРѕ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂСѓ.
         /// </summary>
         public async Task<IActionResult> Edit(Guid id)
         {
@@ -59,10 +68,10 @@ namespace DataGridCar.Web.Page
         }
 
         /// <summary>
-        /// Обрабатывает редактирование существующего продукта.
+        /// РћР±СЂР°Р±Р°С‚С‹РІР°РµС‚ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµРіРѕ РїСЂРѕРґСѓРєС‚Р°.
         /// </summary>
         [HttpPost]
-        public async Task<IActionResult> Edit(Car car)
+        public async Task<IActionResult> Edit(Guid id, Car car)
         {
             if (!ModelState.IsValid)
             {
@@ -70,8 +79,8 @@ namespace DataGridCar.Web.Page
             }
 
             var cars = await carManager.GetAllAsync();
-            var existingCar = cars.FirstOrDefault(p => p.Id == car.Id);
-            if (existingCar == null)
+            var carEx = cars.FirstOrDefault(p => p.Id == id);
+            if (carEx == null)
             {
                 return NotFound();
             }
@@ -81,7 +90,7 @@ namespace DataGridCar.Web.Page
         }
 
         /// <summary>
-        /// Обрабатывает удаление продукта по его идентификатору.
+        /// РћР±СЂР°Р±Р°С‚С‹РІР°РµС‚ СѓРґР°Р»РµРЅРёРµ РїСЂРѕРґСѓРєС‚Р° РїРѕ РµРіРѕ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂСѓ.
         /// </summary>
         [HttpPost]
         public async Task<IActionResult> Delete(Guid id)
@@ -92,6 +101,14 @@ namespace DataGridCar.Web.Page
                 return NotFound();
             }
             return RedirectToAction(nameof(Index));
+        }
+
+        /// <summary>
+        /// РћС‚РѕР±СЂР°Р¶Р°РµС‚ СЃС‚СЂР°РЅРёС†Сѓ РєРѕРЅС„РёРґРµРЅС†РёР°Р»СЊРЅРѕСЃС‚Рё.
+        /// </summary>
+        public IActionResult Privacy()
+        {
+            return View();
         }
     }
 }
