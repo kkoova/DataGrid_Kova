@@ -1,0 +1,67 @@
+﻿﻿@using DataGridCar.Contracts.Models;
+@model IReadOnlyCollection<Car>
+@{
+	ViewData["Title"] = "Аренда машины";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Аренда машин!</h1>
+	<p>Автор: <a href="https://github.com/kkoova"> Коробейникова Алина</a>.</p>
+	<p>Группа: ИП - 21 - 3</p>
+</div>
+
+<br>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="mdo">Добавить машину</button>
+</div>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Марка машины</th>
+			<th scope="col">Номер машины</th>
+			<th scope="col">Пробег машины</th>
+			<th scope="col">Средний расход топлива</th>
+			<th scope="col">Объем топлива</th>
+			<th scope="col">Стоимость аренды</th>
+			<th scope="col"></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var car in Model)
+		{
+			<tr>
+				<td>@car.Carbrand</td>
+				<td>@car.Number</td>
+				<td>@car.Mileage</td>
+				<td>@car.AverageFuelConsumption</td>
+				<td>@car.FuelVolume</td>
+				<td>@car.CostRent</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@car.Id" class="btn btn-primary"
+					   onclick="return confirm('Вы уверены, что хотите изменить эту машину?');">
+						Изменить
+					</a>
+
+					<form asp-action="Delete" asp-route-id="@car.Id" method="post" style="display:inline;">
+						<button type="submit" class="btn btn-primary"
+								onclick="return confirm('Вы уверены, что хотите удалить эту машину?');">
+							Удалить
+						</button>
+					</form>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+<div class="row bg-light p-2">
+	<div class="col d-flex justify-content-between">
+		<span>Всего машин:</span>
+		<strong class="m-auto">55@* @stats?.TotalAmount *@</strong>
+	</div>
+	<div class="col d-flex justify-content-between">
+		<span>Машин с уровнем топлива меньше 5:</span>
+		<strong class="m-auto">54@* @stats?.FullPriceWithNds *@</strong>
+	</div>
+</div>

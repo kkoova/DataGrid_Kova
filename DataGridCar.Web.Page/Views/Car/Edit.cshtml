@@ -1,0 +1,60 @@
+﻿﻿@using DataGridCar.Contracts.Models;
+@model Car
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Редактирование машины</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="row g-4" asp-action="Edit" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    
+                    <div class="col-md-6">
+                        <label for="CarBrand" class="form-label">Марка машины</label>
+                        <select class="form-select" asp-for="Carbrand" id="CarBrand" required>
+                            <option value="Hyundai Cross">Hyundai Cross</option>
+                            <option value="Lada vesta">Lada vesta</option>
+                            <option value="Mitsubishi Outlander">Mitsubishi Outlander</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="CarNumber" class="form-label">Номер машины</label>
+                        <input type="text" class="form-control" asp-for="Number" id="CarNumber" required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="Mileage" class="form-label">Пробег машины</label>
+                        <input type="number" class="form-control" asp-for="Mileage" id="Mileage" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="AverageFuelConsumption" class="form-label">Средний расход</label>
+                        <input type="number" class="form-control" asp-for="AverageFuelConsumption" id="AverageFuelConsumption" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="FuelVolume" class="form-label">Объем топлива</label>
+                        <input type="number" class="form-control" asp-for="FuelVolume" id="FuelVolume" required>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="CostRent" class="form-label">Стоимость аренды</label>
+                        <input type="number" class="form-control" asp-for="CostRent" id="CostRent" required>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                        <button class="btn btn-primary" type="submit">Сохранить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

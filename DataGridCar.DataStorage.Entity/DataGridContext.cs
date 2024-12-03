@@ -11,7 +11,7 @@ namespace DataGridCar.DataStorage.Entity
         /// <summary>
         /// Конструктор контекста базы данных
         /// </summary>
-        public DataGridContext() : base("CarDataGridDB")
+        public DataGridContext() : base("CarProcat")
         { }
 
         /// <summary>

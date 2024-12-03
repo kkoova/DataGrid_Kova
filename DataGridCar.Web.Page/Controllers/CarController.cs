@@ -4,9 +4,14 @@ using DataGridCar.Contracts.Models;
 
 namespace DataGridCar.Web.Page
 {
-    public class CarController(ICarManager carManager) : Controller
+    public class CarController : Controller
     {
-        private readonly ICarManager carManager = carManager;
+        private readonly ICarManager carManager;
+
+        public CarController(ICarManager carManager)
+        {
+            this.carManager = carManager;
+        }
 
         /// <summary>
         /// Отображает список всех машин.
@@ -57,7 +62,7 @@ namespace DataGridCar.Web.Page
         /// Обрабатывает редактирование существующего продукта.
         /// </summary>
         [HttpPost]
-        public async Task<IActionResult> Edit(Guid id, Car car)
+        public async Task<IActionResult> Edit(Car car)
         {
             if (!ModelState.IsValid)
             {
@@ -65,8 +70,8 @@ namespace DataGridCar.Web.Page
             }
 
             var cars = await carManager.GetAllAsync();
-            var exCar = cars.FirstOrDefault(p => p.Id == id);
-            if (exCar == null)
+            var existingCar = cars.FirstOrDefault(p => p.Id == car.Id);
+            if (existingCar == null)
             {
                 return NotFound();
             }
