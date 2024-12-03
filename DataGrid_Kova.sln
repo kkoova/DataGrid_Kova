@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridCar.DataStorage.Ent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridCar.Web", "DataGridCar.Web\DataGridCar.Web.csproj", "{DDFFF450-7EB6-4EDE-BCFE-E9CF43D81763}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridCar.Web.Page", "DataGridCar.Web.Page\DataGridCar.Web.Page.csproj", "{56B56310-E38C-4671-9E5F-4F1BD30C63EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{DDFFF450-7EB6-4EDE-BCFE-E9CF43D81763}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDFFF450-7EB6-4EDE-BCFE-E9CF43D81763}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDFFF450-7EB6-4EDE-BCFE-E9CF43D81763}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56B56310-E38C-4671-9E5F-4F1BD30C63EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56B56310-E38C-4671-9E5F-4F1BD30C63EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56B56310-E38C-4671-9E5F-4F1BD30C63EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56B56310-E38C-4671-9E5F-4F1BD30C63EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

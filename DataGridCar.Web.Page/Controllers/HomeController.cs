@@ -1,8 +1,8 @@
-﻿using System.Diagnostics;
-using DataGridCar.Web.Models;
+using System.Diagnostics;
+using DataGridCar.Web.Page.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DataGridCar.Web.Controllers
+namespace DataGridCar.Web.Page.Controllers
 {
     public class HomeController : Controller
     {
