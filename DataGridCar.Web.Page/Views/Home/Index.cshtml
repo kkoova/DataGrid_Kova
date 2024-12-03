@@ -1,4 +1,6 @@
-﻿@{
+﻿﻿@using DataGridCar.Contracts.Models;
+@model IReadOnlyCollection<Car>
+@{
 	ViewData["Title"] = "Аренда машины";
 }
 
@@ -83,11 +85,29 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<th scope="row">1</th>
-			<td>Mark</td>
-			<td>Otto</td>
-			<td>mdo</td>
-		</tr>
+		@foreach (var car in Model)
+		{
+			<tr>
+				<td>@car.Carbrand</td>
+				<td>@car.Number</td>
+				<td>@car.Mileage</td>
+				<td>@car.AverageFuelConsumption</td>
+				<td>@car.FuelReserve</td>
+				<td>@car.CostRent</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@car.Id" class="btn btn-warning"
+					   onclick="return confirm('Вы уверены, что хотите изменить этот продукт?');">
+						Изменить
+					</a>
+
+					<form asp-action="Delete" asp-route-id="@car.Id" method="post" style="display:inline;">
+						<button type="submit" class="btn btn-danger"
+								onclick="return confirm('Вы уверены, что хотите удалить этот продукт?');">
+							Удалить
+						</button>
+					</form>
+				</td>
+			</tr>
+		}
 	</tbody>
 </table>
