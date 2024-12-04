@@ -13,24 +13,30 @@
 <br>
 
 <div>
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCarModal">Добавить машину</button>
+	<button id="addCarButton" type="button" class="btn btn-primary">
+		Добавить машину
+	</button>
 </div>
 
-<div class="modal fade" id="addCarModal" tabindex="-1" role="dialog" aria-labelledby="addCarModalLabel" aria-hidden="true">
+<div class="modal fade" id="carModal" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="addCarModalLabel">Добавить машину</h5>
+				<h5 class="modal-title" id="carModalLabel">Машина</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				<!-- Форма добавления машины -->
-				<form id="addCarForm">
+				<form id="carForm" asp-controller="Car" method="post">
+					<input type="hidden" id="carId" name="Id" value="" />
 					<div class="form-group">
 						<label for="carBrand">Марка машины</label>
-						<input type="text" class="form-control" id="carBrand" name="Carbrand" required>
+						<select class="form-select" id="carBrand" name="Carbrand" required>
+							<option value="Hyundai Cross">Hyundai Cross</option>
+							<option value="Lada vesta">Lada vesta</option>
+							<option value="Mitsubishi Outlander">Mitsubishi Outlander</option>
+						</select>
 					</div>
 					<div class="form-group">
 						<label for="carNumber">Номер машины</label>
@@ -39,6 +45,10 @@
 					<div class="form-group">
 						<label for="carMileage">Пробег</label>
 						<input type="number" class="form-control" id="carMileage" name="Mileage" required>
+					</div>
+					<div class="form-group">
+						<label for="carAverageFuelConsumption">Средний расход топлива</label>
+						<input type="number" class="form-control" id="carAverageFuelConsumption" name="AverageFuelConsumption" required>
 					</div>
 					<div class="form-group">
 						<label for="carFuelVolume">Объем топлива</label>
@@ -54,6 +64,7 @@
 		</div>
 	</div>
 </div>
+
 
 <table class="table">
 	<thead>
@@ -78,10 +89,11 @@
 				<td>@car.FuelVolume</td>
 				<td>@car.CostRent</td>
 				<td>
-					<a asp-action="Edit" asp-route-id="@car.Id" class="btn btn-primary"
-					   onclick="return confirm('Вы уверены, что хотите изменить эту машину?');">
-						Изменить
-					</a>
+					<div>
+						<button type="button" class="btn btn-primary editCarButton" data-id="@car.Id">
+							Изменить
+						</button>
+					</div>
 
 					<form asp-action="Delete" asp-route-id="@car.Id" method="post" style="display:inline;">
 						<button type="submit" class="btn btn-primary"
@@ -94,6 +106,7 @@
 		}
 	</tbody>
 </table>
+
 <div class="row bg-light p-2">
 	<div class="col d-flex justify-content-between">
 		<span>Всего машин:</span>

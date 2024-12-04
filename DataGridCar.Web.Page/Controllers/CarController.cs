@@ -26,16 +26,21 @@ namespace DataGridCar.Web.Page
             return View(cars.Result);
         }
 
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return PartialView("_AddCarForm");
+        }
 
         /// <summary>
-        /// Обрабатывает создание нового продукта.
+        /// Обрабатывает создание новой машины.
         /// </summary>
         [HttpPost]
         public async Task<IActionResult> Add(Car car)
         {
             if (!ModelState.IsValid)
             {
-                return PartialView("_AddCarForm", car);
+                return PartialView("_getCarForm", car);
             }
 
             car.Id = Guid.NewGuid();
@@ -44,7 +49,7 @@ namespace DataGridCar.Web.Page
         }
 
         /// <summary>
-        /// Отображает страницу редактирования продукта по его идентификатору.
+        /// Отображает форму редактирования машины по ее идентификатору.
         /// </summary>
         public async Task<IActionResult> Edit(Guid id)
         {
@@ -59,7 +64,7 @@ namespace DataGridCar.Web.Page
         }
 
         /// <summary>
-        /// Обрабатывает редактирование существующего продукта.
+        /// Обрабатывает редактирование существующей машины.
         /// </summary>
         [HttpPost]
         public async Task<IActionResult> Edit(Car car)
@@ -81,7 +86,7 @@ namespace DataGridCar.Web.Page
         }
 
         /// <summary>
-        /// Обрабатывает удаление продукта по его идентификатору.
+        /// Обрабатывает удаление машины по ее идентификатору.
         /// </summary>
         [HttpPost]
         public async Task<IActionResult> Delete(Guid id)
@@ -92,6 +97,17 @@ namespace DataGridCar.Web.Page
                 return NotFound();
             }
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetCar(Guid id)
+        {
+            var car = (await carManager.GetAllAsync()).FirstOrDefault(c => c.Id == id);
+            if (car == null)
+            {
+                return NotFound();
+            }
+            return Json(car);
         }
     }
 }
