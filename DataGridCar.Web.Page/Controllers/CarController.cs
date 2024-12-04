@@ -26,21 +26,24 @@ namespace DataGridCar.Web.Page
             return View(cars.Result);
         }
 
+        /// <summary>
+        /// Отображает страницу создания нового продукта.
+        /// </summary>
         [HttpGet]
         public IActionResult Add()
         {
-            return PartialView("_AddCarForm");
+            return PartialView("_carModal");
         }
 
         /// <summary>
-        /// Обрабатывает создание новой машины.
+        /// Обрабатывает создание нового продукта.
         /// </summary>
         [HttpPost]
         public async Task<IActionResult> Add(Car car)
         {
             if (!ModelState.IsValid)
             {
-                return PartialView("_getCarForm", car);
+                return PartialView("_AddCarForm", car);
             }
 
             car.Id = Guid.NewGuid();
@@ -48,9 +51,9 @@ namespace DataGridCar.Web.Page
             return RedirectToAction(nameof(Index));
         }
 
-        /// <summary>
-        /// Отображает форму редактирования машины по ее идентификатору.
-        /// </summary>
+        ///// <summary>
+        ///// Отображает форму редактирования машины по ее идентификатору.
+        ///// </summary>
         public async Task<IActionResult> Edit(Guid id)
         {
             var cars = await carManager.GetAllAsync();
@@ -63,9 +66,9 @@ namespace DataGridCar.Web.Page
             return View(car);
         }
 
-        /// <summary>
-        /// Обрабатывает редактирование существующей машины.
-        /// </summary>
+        ///// <summary>
+        ///// Обрабатывает редактирование существующей машины.
+        ///// </summary>
         [HttpPost]
         public async Task<IActionResult> Edit(Car car)
         {

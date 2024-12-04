@@ -1,7 +1,9 @@
-﻿﻿@using DataGridCar.Contracts.Models;
+﻿@using DataGridCar.Contracts
+﻿@using DataGridCar.Contracts.Models;
 @model IReadOnlyCollection<Car>
 @{
 	ViewData["Title"] = "Аренда машины";
+	var stats = ViewData[nameof(ICarStats)] as ICarStats;
 }
 
 <div class="text-center">
@@ -13,11 +15,11 @@
 <br>
 
 <div>
-	<button id="addCarButton" type="button" class="btn btn-primary">
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#carModal">
 		Добавить машину
 	</button>
 </div>
-
+<br>
 <div class="modal fade" id="carModal" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -93,8 +95,7 @@
 				<td>@((car.FuelVolume / car.AverageFuelConsumption * car.CostRent).ToString("F2"))</td>
 				<td>
 					<div>
-						<button type="button" class="btn btn-primary editCarButton" data-id="@car.Id"
-						onclick="return confirm('Вы уверены, что хотите редактировать эту машину?');">
+						<button type="button" class="btn btn-primary editCarButton" data-id="@car.Id">
 							Изменить
 						</button>
 					</div>
@@ -114,10 +115,10 @@
 <div class="row bg-light p-2">
 	<div class="col d-flex justify-content-between">
 		<span>Всего машин:</span>
-		<strong class="m-auto">55@* @stats?.TotalAmount *@</strong>
+		<strong class="m-auto">@stats?.CountCar</strong>
 	</div>
 	<div class="col d-flex justify-content-between">
 		<span>Машин с уровнем топлива меньше 7:</span>
-		<strong class="m-auto">54@* @stats?.FullPriceWithNds *@</strong>
+		<strong class="m-auto">@stats?.CarLowFlue</strong>
 	</div>
 </div>

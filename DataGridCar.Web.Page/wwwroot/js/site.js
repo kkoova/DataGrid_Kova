@@ -1,8 +1,4 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-$(document).on('click', '.editCarButton', function () {
+﻿$(document).on('click', '.editCarButton', function () {
     const carId = $(this).data('id');
     $('#carModalLabel').text('Редактировать машину');
     $('#carForm').attr('action', '/Car/Edit'); // URL для редактирования
@@ -22,3 +18,4 @@ $(document).on('click', '.editCarButton', function () {
         })
         .catch(error => console.error('Ошибка при загрузке данных машины:', error));
 });
+
