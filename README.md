@@ -19,6 +19,9 @@
 + [Seq_Log (DataGridCar\Forms\MainForm.cs)](https://github.com/kkoova/DataGrid_Kova/blob/9449f4e340b3a7f2691752dabfa70ea90fa812b8/Seq.png)
 + [UnitTests (DataGridCar.CarManagerData.Test, DataGridCar.MemotyStorage.Test)](https://github.com/kkoova/DataGrid_Kova/blob/9449f4e340b3a7f2691752dabfa70ea90fa812b8/UnitTest.png)
 + [Entity Fr](https://github.com/kkoova/DataGrid_Kova/blob/23808e0268b15d1c6a9ffcf8a2f6645953710e2d/Entity.png)
+
+### UPD (05.12.2024)
+
 + [WEB](https://github.com/kkoova/DataGrid_Kova/blob/68029d0ee6753e6275f94a8a70b48361643ed31e/web.png)
 
 ## ТЕХНОЛОГИИ:
