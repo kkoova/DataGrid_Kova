@@ -5,6 +5,9 @@ using Serilog;
 
 namespace DataGridCar.Web.Page
 {
+    /// <summary>
+    /// Класс программы <see cref="Program"/> основного процесса приложения.
+    /// </summary>
     public static class Program
     {
         public static void Main(string[] args)

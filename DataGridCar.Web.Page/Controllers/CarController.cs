@@ -4,10 +4,16 @@ using DataGridCar.Contracts.Models;
 
 namespace DataGridCar.Web.Page
 {
+    /// <summary>
+    /// Контроллер <see cref="CarController"/> для управления автомобилями.
+    /// </summary>
     public class CarController : Controller
     {
         private readonly ICarManager carManager;
 
+        /// <summary>
+        /// Конструктор <see cref="CarController"/>
+        /// </summary>
         public CarController(ICarManager carManager)
         {
             this.carManager = carManager;
@@ -27,15 +33,7 @@ namespace DataGridCar.Web.Page
         }
 
         /// <summary>
-        /// Отображает страницу создания нового продукта.
-        /// </summary>
-        public IActionResult Add()
-        {
-            return PartialView("_carModal");
-        }
-
-        /// <summary>
-        /// Обрабатывает создание нового продукта.
+        /// Обрабатывает создание новой машины.
         /// </summary>
         [HttpPost]
         public async Task<IActionResult> Add(Car car)
@@ -43,21 +41,6 @@ namespace DataGridCar.Web.Page
             car.Id = Guid.NewGuid();
             await carManager.AddAsync(car);
             return RedirectToAction(nameof(Index));
-        }
-
-        ///// <summary>
-        ///// Отображает форму редактирования машины по ее идентификатору.
-        ///// </summary>
-        public async Task<IActionResult> Edit(Guid id)
-        {
-            var cars = await carManager.GetAllAsync();
-            var car = cars.FirstOrDefault(p => p.Id == id);
-            if (car == null)
-            {
-                return NotFound();
-            }
-
-            return View(car);
         }
 
         ///// <summary>
@@ -96,6 +79,9 @@ namespace DataGridCar.Web.Page
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Получение информации о машине по id
+        /// </summary>>
         [HttpGet]
         public async Task<IActionResult> GetCar(Guid id)
         {
