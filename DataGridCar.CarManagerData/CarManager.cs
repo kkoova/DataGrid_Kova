@@ -18,20 +18,19 @@ namespace DataGridCar.CarManagerData
     public class CarManager : ICarManager
     {
         private readonly ICarStorage carStorage;
-        private readonly ILogger logger;
+        private readonly ILogger<CarManager> logger;
         private readonly Stopwatch stopwatch;
 
         /// <summary>
         /// Инициализирует новый экземпляр класса <see cref="CarManager"/>
         /// </summary>
         /// <param name="carStorage">Интерфейс хранилища автомобилей</param>
-        public CarManager(ICarStorage carStorage, ILogger logger)
+        public CarManager(ICarStorage carStorage, ILogger<CarManager> logger)
         {
             stopwatch = new Stopwatch();
             this.carStorage = carStorage;
             this.logger = logger;
         }
-
         /// <inheritdoc />
         public async Task<Car> AddAsync(Car car)
         {

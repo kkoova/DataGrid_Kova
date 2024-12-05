@@ -1,0 +1,125 @@
+﻿@using DataGridCar.Contracts
+﻿@using DataGridCar.Contracts.Models;
+@model IReadOnlyCollection<Car>
+@{
+	ViewData["Title"] = "Аренда машины";
+	var stats = ViewData[nameof(ICarStats)] as ICarStats;
+}
+
+<div class="text-center">
+	<h1 class="display-4">Аренда машин!</h1>
+	<p>Автор: <a href="https://github.com/kkoova"> Коробейникова Алина</a>.</p>
+	<p>Группа: ИП - 21 - 3</p>
+</div>
+
+<br>
+
+<div>
+	<button type="button" class="btn btn-primary addCarButton">
+		Добавить машину
+	</button>
+</div>
+
+<br>
+
+<div class="modal fade" id="carModal" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="carModalLabel">Машина</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form id="carForm" asp-controller="Car" method="post">
+					<input type="hidden" id="carId" name="Id" value="" />
+					<div class="form-group">
+						<label for="carBrand">Марка машины</label>
+						<select class="form-select" id="carBrand" name="Carbrand" required>
+							<option value="Hyundai Cross">Hyundai Cross</option>
+							<option value="Lada vesta">Lada vesta</option>
+							<option value="Mitsubishi Outlander">Mitsubishi Outlander</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="carNumber">Номер машины</label>
+						<input type="text" class="form-control" id="carNumber" name="Number" required>
+					</div>
+					<div class="form-group">
+						<label for="carMileage">Пробег</label>
+						<input type="number" class="form-control" id="carMileage" name="Mileage" required>
+					</div>
+					<div class="form-group">
+						<label for="carAverageFuelConsumption">Средний расход топлива</label>
+						<input type="number" class="form-control" id="carAverageFuelConsumption" name="AverageFuelConsumption" required>
+					</div>
+					<div class="form-group">
+						<label for="carFuelVolume">Объем топлива</label>
+						<input type="number" class="form-control" id="carFuelVolume" name="FuelVolume" required>
+					</div>
+					<div class="form-group">
+						<label for="carCostRent">Стоимость аренды</label>
+						<input type="number" class="form-control" id="carCostRent" name="CostRent" required>
+					</div>
+					<button type="submit" class="btn btn-primary">Сохранить</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Марка машины</th>
+			<th scope="col">Номер машины</th>
+			<th scope="col">Пробег машины</th>
+			<th scope="col">Средний расход топлива</th>
+			<th scope="col">Объем топлива</th>
+			<th scope="col">Стоимость аренды</th>
+			<th scope="col">Запас хода топлива</th>
+			<th scope="col">Сумма аренды</th>
+			<th scope="col"></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var car in Model)
+		{
+			<tr>
+				<td>@car.Carbrand</td>
+				<td>@car.Number</td>
+				<td>@car.Mileage</td>
+				<td>@car.AverageFuelConsumption</td>
+				<td>@car.FuelVolume</td>
+				<td>@car.CostRent</td>
+				<td>@((car.FuelVolume / car.AverageFuelConsumption).ToString("F2"))</td>
+				<td>@((car.FuelVolume / car.AverageFuelConsumption * car.CostRent).ToString("F2"))</td>
+				<td>
+					<div>
+						<button type="button" class="btn btn-primary editCarButton" data-id="@car.Id">
+							Изменить
+						</button>
+					</div>
+					<form asp-action="Delete" asp-route-id="@car.Id" method="post" style="display:inline;">
+						<button type="submit" class="btn btn-primary"
+								onclick="return confirm('Вы уверены, что хотите удалить эту машину?');">
+							Удалить
+						</button>
+					</form>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<div class="row bg-light p-2">
+	<div class="col d-flex justify-content-between">
+		<span>Всего машин:</span>
+		<strong class="m-auto">@stats?.CountCar</strong>
+	</div>
+	<div class="col d-flex justify-content-between">
+		<span>Машин с уровнем топлива меньше 7:</span>
+		<strong class="m-auto">@stats?.CarLowFlue</strong>
+	</div>
+</div>
