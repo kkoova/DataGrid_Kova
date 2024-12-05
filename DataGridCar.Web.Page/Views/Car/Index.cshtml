@@ -15,11 +15,13 @@
 <br>
 
 <div>
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#carModal">
+	<button type="button" class="btn btn-primary addCarButton">
 		Добавить машину
 	</button>
 </div>
+
 <br>
+
 <div class="modal fade" id="carModal" tabindex="-1" role="dialog" aria-labelledby="carModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -99,7 +101,6 @@
 							Изменить
 						</button>
 					</div>
-					<br>
 					<form asp-action="Delete" asp-route-id="@car.Id" method="post" style="display:inline;">
 						<button type="submit" class="btn btn-primary"
 								onclick="return confirm('Вы уверены, что хотите удалить эту машину?');">

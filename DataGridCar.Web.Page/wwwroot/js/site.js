@@ -1,9 +1,8 @@
 ﻿$(document).on('click', '.editCarButton', function () {
     const carId = $(this).data('id');
     $('#carModalLabel').text('Редактировать машину');
-    $('#carForm').attr('action', '/Car/Edit'); // URL для редактирования
+    $('#carForm').attr('action', '/Car/Edit');
 
-    // Загрузка данных машины через fetch
     fetch(`/Car/GetCar?id=${carId}`)
         .then(response => response.json())
         .then(car => {
@@ -17,5 +16,11 @@
             $('#carModal').modal('show');
         })
         .catch(error => console.error('Ошибка при загрузке данных машины:', error));
+});
+
+$(document).on('click', '.addCarButton', function () {
+    $('#carModalLabel').text('Добавить машину');
+    $('#carForm').attr('action', '/Car/Add');
+    $('#carModal').modal('show');
 });
 

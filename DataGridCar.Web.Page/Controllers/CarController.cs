@@ -29,7 +29,6 @@ namespace DataGridCar.Web.Page
         /// <summary>
         /// ќтображает страницу создани€ нового продукта.
         /// </summary>
-        [HttpGet]
         public IActionResult Add()
         {
             return PartialView("_carModal");
@@ -41,11 +40,6 @@ namespace DataGridCar.Web.Page
         [HttpPost]
         public async Task<IActionResult> Add(Car car)
         {
-            if (!ModelState.IsValid)
-            {
-                return PartialView("_AddCarForm", car);
-            }
-
             car.Id = Guid.NewGuid();
             await carManager.AddAsync(car);
             return RedirectToAction(nameof(Index));
